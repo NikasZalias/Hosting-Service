@@ -11,4 +11,5 @@ company_name: Google,
 country: USA,
 blocked: false,
 status: 3,
+current_money_count: 500,
 domain_name:

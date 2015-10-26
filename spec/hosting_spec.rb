@@ -6,7 +6,7 @@ require 'user'
 RSpec.describe Hosting do
   context 'functions' do
     before(:each) do
-      @hosting = Hosting.new('Title')
+      @hosting = Hosting.new('Title', 50000)
       @admin = Admin.new(1, 'name', 'password', 2)
       @user = User.new('name1', 'surname1', 'address111',
                        862_324_442_4, 'LT6546543198754111116')
@@ -104,7 +104,14 @@ RSpec.describe Hosting do
       expect(result).to end_with '.lt'
       # Can I check domain's endings from the list?
     end
+
+    it '.pay_for_hosting' do
+      @hosting.add_user(@user)
+      @hosting.pay_for_hosting(@user, @hosting)
+      expect(@user.current_money_count).to eq 400
+    end
   end
+  
 end
 #perki 4 domenus 5-as nemokamai
 #reek

@@ -3,12 +3,13 @@ require 'user'
 require 'admin'
 # Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas
 class Hosting
-  attr_reader :title, :user_list, :admin_list
+  attr_reader :title, :user_list, :admin_list, :current_money_count
 
-  def initialize(title)
+  def initialize(title, current_money_count)
     @user_list = []
     @admin_list = []
     @title = title
+    @current_money_count = current_money_count
   end
 
   def add_admin(obj)
@@ -69,6 +70,15 @@ class Hosting
         return domain_name
       else
         return false
+      end
+    end
+  end
+
+  def pay_for_hosting(user, hosting)
+    @user_list.each do |i|
+      if i == user
+        i.current_money_count = i.current_money_count - 100
+        @current_money_count = @current_money_count + 100
       end
     end
   end
