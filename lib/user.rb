@@ -8,7 +8,8 @@ class User
                 :account_number, :password,
                 :email, :id, :person_type,
                 :company_name, :country, :blocked,
-                :status, :domains_name, :current_money_count
+                :status, :domains_name, :current_money_count,
+                :domain_count
 
   def initialize(name, surname, address, number, account_number)
     @name = name
@@ -18,6 +19,7 @@ class User
     @account_number = account_number
     set_default_information('nikaszalias123', 100, false, 3, '')
     set_information('nzaliauskas@gmail.com', 'Company', 'Google', 'USA', 500)
+    set_more_info(0)
   end
 
   def set_default_information(password, id, blocked, status, domains_name)
@@ -36,6 +38,10 @@ class User
     @current_money_count = current_money_count
   end
 
+  def set_more_info(domain_count)
+    @domain_count = domain_count
+  end
+
   def self.from_yaml(obj)
     User.new(obj['name'], obj['surname'], obj['address'],
              obj['number'], obj['account_number'])
@@ -46,5 +52,6 @@ class User
                             obj['status'], obj['domain_name'])
     set_information(obj['email'], obj['person_type'],
                     obj['company_name'], obj['country'], obj['current_money_count'])
+    set_more_info(obj['domain_count'])
   end
 end

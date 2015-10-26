@@ -12,4 +12,5 @@ country: USA,
 blocked: false,
 status: 3,
 current_money_count: 500,
+domain_count: 0,
 domain_name:

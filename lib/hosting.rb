@@ -67,14 +67,24 @@ class Hosting
     @user_list.each do |i|
       if i == user
         i.domains_name = domain_name
-        return domain_name
+        i.domain_count = i.domain_count + 1
+        if i.domain_count < 5
+          pay_for_hosting(user)
+          return domain_name
+        else if i.domain_count > 5
+               pay_for_hosting(user)
+               return domain_name
+             else
+               return domain_name
+             end
+        end
       else
         return false
       end
     end
   end
 
-  def pay_for_hosting(user, hosting)
+  def pay_for_hosting(user)
     @user_list.each do |i|
       if i == user
         i.current_money_count = i.current_money_count - 100
