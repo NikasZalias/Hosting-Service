@@ -1,0 +1,18 @@
+Tikslas - susipažinti su: 
+  (a) elgsena paremto programavimo principais
+  (b) moduliniu (angl. "unit") testavimu
+  (c) RSpec testavimo karkasu
+  (d) Ruby progravimo kalba
+
+Užduotis:
+  1) Identifikuoti esmine esybe (pvz. bankineje sistemoje tai butu Saskaita); 
+  2) Igyvendinti esmines esybes funkcionaluma BDD principu parašant bent 10 testu, kurie testuoja butent ta dalykine sriti. Pvz. puikiai tinka testas, kuris bankineje sistemoje testuoja ar korektiškai nukeliauja pinigai gavejui, kai siuntejas atlieka pavedima. Bet visiškai netinka toks testas, kuris testuoja kokio tipo objektas susikure iškvietus 'initialize' metoda, nes tai visiškai neparodo ar sistema veikia korektiškai ar ne.
+
+Reikalavimai:
+  1) Visas kodas turi buti 100% padengtas testais.
+  2) Reikia panaudoti SimpleCov iranki ir pademonstruoti kodo padengima testais.
+  3) Reikia panaudoti RuboCop iranki ir pademonstruoti kodo atitikima "Ruby Style Guide".
+  4) Jeigu igyvendinant esmines klases funkcionaluma prireikia kitu klasiu, tai jas taip pat reikia parašyti panaudojant BDD.
+  5) Negalima naudoti Rails, ActiveRecord ar kokio nors kito karkaso atliekant šia užduoti. T.y. užduotis turi daugiau demonstruoti gebejima programuoti Ruby, o ne naudojimasi kokiu nors karkasu.
+
+Ivertinimas: 1 balas  
