@@ -124,6 +124,12 @@ RSpec.describe Hosting do
       @hosting.add_domain('www.nikodemas.lt', @user)
       expect(@hosting.current_money_count).to eq 50100
     end
+
+    it '.save_to_file' do
+      @hosting.add_user(@user)
+      @hosting.add_admin(@admin)
+      expect(@hosting.save_to_file).not_to be_nil
+    end
   end
 end
 

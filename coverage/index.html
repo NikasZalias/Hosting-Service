@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-03T13:37:23+02:00">2015-11-03T13:37:23+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-03T14:13:36+02:00">2015-11-03T14:13:36+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">58.64%</span></span>
+    (<span class="covered_percent"><span class="red">51.26%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.85
+         0.62
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>191</b> relevant lines. 
-    <span class="green"><b>112</b> lines covered</span> and
-    <span class="red"><b>79</b> lines missed </span>
+    <b>199</b> relevant lines. 
+    <span class="green"><b>102</b> lines covered</span> and
+    <span class="red"><b>97</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#5844a00bae60f27875ac93b226c255aa007b786e" class="src_link" title="lib/hosting.rb">lib/hosting.rb</a></td>
-        <td class="red strong">59.02 %</td>
-        <td>102</td>
-        <td>61</td>
-        <td>36</td>
-        <td>25</td>
-        <td>1.1</td>
+        <td class="red strong">43.08 %</td>
+        <td>109</td>
+        <td>65</td>
+        <td>28</td>
+        <td>37</td>
+        <td>0.4</td>
       </tr>
       
       <tr>
@@ -82,11 +82,11 @@
       
       <tr>
         <td class="strong"><a href="#5a131ce1691739e1b70d5efa94b48392e8df0ff0" class="src_link" title="spec/hosting_spec.rb">spec/hosting_spec.rb</a></td>
-        <td class="red strong">41.67 %</td>
-        <td>131</td>
-        <td>84</td>
-        <td>35</td>
-        <td>49</td>
+        <td class="red strong">37.5 %</td>
+        <td>135</td>
+        <td>88</td>
+        <td>33</td>
+        <td>55</td>
         <td>0.4</td>
       </tr>
       
@@ -253,11 +253,11 @@
         <div class="source_table" id="5844a00bae60f27875ac93b226c255aa007b786e">
   <div class="header">
     <h3>lib/hosting.rb</h3>
-    <h4><span class="red">59.02 %</span> covered</h4>
+    <h4><span class="red">43.08 %</span> covered</h4>
     <div>
-      <b>61</b> relevant lines. 
-      <span class="green"><b>36</b> lines covered</span> and
-      <span class="red"><b>25</b> lines missed.</span>
+      <b>65</b> relevant lines. 
+      <span class="green"><b>28</b> lines covered</span> and
+      <span class="red"><b>37</b> lines missed.</span>
     </div>
   </div>
   
@@ -267,7 +267,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;json&#39;</code>
+          <code class="ruby">require &#39;yaml&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
@@ -360,8 +360,8 @@
           <code class="ruby">  def add_admin(obj)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
           <code class="ruby">    @admin_list &lt;&lt; obj</code>
         </li>
@@ -666,44 +666,44 @@
           <code class="ruby">  def add_domain(domain_name, user)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="68">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="68">
+          
           
           <code class="ruby">    @user_list.each do |i|</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="69">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="69">
+          
           
           <code class="ruby">      if i == user</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="70">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="70">
+          
           
           <code class="ruby">        i.domains_name = domain_name</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="71">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="71">
+          
           
           <code class="ruby">        i.domain_count = i.domain_count + 1</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="72">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="72">
+          
           
           <code class="ruby">        if i.domain_count &lt; 5</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="73">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="73">
+          
           
           <code class="ruby">          pay_for_hosting(user)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="74">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="74">
+          
           
           <code class="ruby">          return domain_name</code>
         </li>
@@ -792,26 +792,26 @@
           <code class="ruby">  def pay_for_hosting(user)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="89">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="89">
+          
           
           <code class="ruby">    @user_list.each do |i|</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="90">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="90">
+          
           
           <code class="ruby">      if i == user</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="91">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="91">
+          
           
           <code class="ruby">        i.current_money_count = i.current_money_count - 100</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="92">
-          <span class="hits">4</span>
+        <li class="missed" data-hits="0" data-linenumber="92">
+          
           
           <code class="ruby">        @current_money_count = @current_money_count + 100</code>
         </li>
@@ -846,14 +846,14 @@
           <code class="ruby">  RSpec::Matchers.define :fantastic_four do 4</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="98">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="98">
+          
           
           <code class="ruby">    match do |actual|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="99">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="99">
+          
           
           <code class="ruby">      4 == actual</code>
         </li>
@@ -871,6 +871,48 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="103">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def save_to_file</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    File.open(&#39;./Database/data.yml&#39;, &#39;w&#39;) do |w|</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="105">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      w.write self.to_yaml</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="106">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      p self.to_yaml</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="107">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
           
           
           <code class="ruby">end</code>
@@ -1243,11 +1285,11 @@
         <div class="source_table" id="5a131ce1691739e1b70d5efa94b48392e8df0ff0">
   <div class="header">
     <h3>spec/hosting_spec.rb</h3>
-    <h4><span class="red">41.67 %</span> covered</h4>
+    <h4><span class="red">37.5 %</span> covered</h4>
     <div>
-      <b>84</b> relevant lines. 
-      <span class="green"><b>35</b> lines covered</span> and
-      <span class="red"><b>49</b> lines missed.</span>
+      <b>88</b> relevant lines. 
+      <span class="green"><b>33</b> lines covered</span> and
+      <span class="red"><b>55</b> lines missed.</span>
     </div>
   </div>
   
@@ -1932,38 +1974,38 @@
           <code class="ruby">    it &#39;.add_domain check to increase by wanted number&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="114">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="114">
+          
           
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="115">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="115">
+          
           
           <code class="ruby">      @hosting.add_domain(&#39;www.nikodemas.lt&#39;, @user)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="116">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="116">
+          
           
           <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas.lt&#39;, @user)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="117">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="117">
+          
           
           <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas1.lt&#39;, @user)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="118">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="118">
+          
           
           <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas2.lt&#39;, @user)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="119">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="119">
+          
           
           <code class="ruby">      expect(@user.domain_count).to fantastic_four</code>
         </li>
@@ -2016,25 +2058,49 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="covered" data-hits="1" data-linenumber="128">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;.save_to_file&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="129">
+        <li class="covered" data-hits="1" data-linenumber="129">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @hosting.add_admin(@admin)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="131">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(@hosting.save_to_file).not_to be_nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="133">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="never" data-hits="" data-linenumber="134">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="131">
+        <li class="never" data-hits="" data-linenumber="135">
           
           
           <code class="ruby"></code>

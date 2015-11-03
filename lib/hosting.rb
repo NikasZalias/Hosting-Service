@@ -1,4 +1,4 @@
-require 'json'
+require 'yaml'
 require 'user'
 require 'admin'
 # Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas
@@ -97,6 +97,13 @@ class Hosting
   RSpec::Matchers.define :fantastic_four do 4
     match do |actual|
       4 == actual
+    end
+  end
+
+  def save_to_file
+    File.open('./Database/data.yml', 'w') do |w|
+      w.write self.to_yaml
+      p self.to_yaml
     end
   end
 end
