@@ -3,13 +3,14 @@ require 'user'
 require 'admin'
 # Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas
 class Hosting
-  attr_reader :title, :user_list, :admin_list, :current_money_count
+  attr_reader :title, :user_list, :admin_list, :current_money_count, :account_number
 
-  def initialize(title, current_money_count)
+  def initialize(title, current_money_count, account_number)
     @user_list = []
     @admin_list = []
     @title = title
     @current_money_count = current_money_count
+    @account_number = account_number
   end
 
   def add_admin(obj)
@@ -91,5 +92,9 @@ class Hosting
         @current_money_count = @current_money_count + 100
       end
     end
+  end
+  def read_user_yaml(file_name)
+    open(file_name) { |f| puts f.read }
+    user = User.new()
   end
 end

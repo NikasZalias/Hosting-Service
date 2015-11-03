@@ -6,7 +6,7 @@ require 'user'
 RSpec.describe Hosting do
   context 'functions' do
     before(:each) do
-      @hosting = Hosting.new('Title', 50000)
+      @hosting = Hosting.new('Title', 50000, 'LT6548978465654')
       @admin = Admin.new(1, 'name', 'password', 2)
       @user = User.new('name1', 'surname1', 'address111',
                        862_324_442_4, 'LT6546543198754111116')
@@ -16,7 +16,7 @@ RSpec.describe Hosting do
 
     it '.add_admin' do
       @hosting.add_admin(@admin)
-      expect(@hosting.admin_list).not_to be_nil
+      expect(@hosting.admin_list).to include(@admin)
     end
 
     it '.add_user' do
