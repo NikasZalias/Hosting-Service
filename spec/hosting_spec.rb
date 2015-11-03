@@ -130,6 +130,11 @@ RSpec.describe Hosting do
       @hosting.add_admin(@admin)
       expect(@hosting.save_to_file).not_to be_nil
     end
+
+    it '.check_database_path' do
+      path = @hosting.check_database_path
+      expect(path).to check_file_path('/Database/data.yml')
+    end
   end
 end
 

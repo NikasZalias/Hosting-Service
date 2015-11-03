@@ -103,7 +103,16 @@ class Hosting
   def save_to_file
     File.open('./Database/data.yml', 'w') do |w|
       w.write self.to_yaml
-      p self.to_yaml
+    end
+  end
+
+  def check_database_path
+    File.absolute_path('./Database/data.yml')
+  end
+
+  RSpec::Matchers.define :check_file_path do |expect|
+    match do |actual|
+    actual[-18..-1] == expect
     end
   end
 end
