@@ -115,4 +115,18 @@ class Hosting
     actual[-18..-1] == expect
     end
   end
+
+  # def register(name, surname, address, number, account_number)
+  #
+  # end
+
+  def load_file
+    temp = YAML.load_file('./Database/data.yml')
+    @admin_list = temp.admin_list
+    @user_list = temp.user_list
+
+    @title = temp.title
+    @current_money_count = temp.current_money_count
+    @account_number = temp.account_number
+  end
 end

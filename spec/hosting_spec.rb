@@ -135,6 +135,18 @@ RSpec.describe Hosting do
       path = @hosting.check_database_path
       expect(path).to check_file_path('/Database/data.yml')
     end
+
+    it '.load_file' do
+      @hosting.add_user(@user)
+      @hosting.save_to_file
+      @hosting.load_file
+      expect(@hosting.to_yaml).not_to contain_exactly(
+                                          :id => 2,
+                                          :name => 'admin_hosting',
+                                          :password => '123.admin.123',
+                                          :status => 2
+                                      )
+    end
   end
 end
 

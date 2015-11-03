@@ -17,12 +17,7 @@ user_list:
   country: USA
   current_money_count: 500
   domain_count: 0
-admin_list:
-- !ruby/object:Admin
-  id: 1
-  name: name
-  password: password
-  status: 2
+admin_list: []
 title: Title
 current_money_count: 50000
 account_number: LT6548978465654
