@@ -110,14 +110,13 @@ RSpec.describe Hosting do
       @hosting.pay_for_hosting(@user)
       expect(@user.current_money_count).to eq 400
     end
-    it '.add_domain check user money' do
+    it '.add_domain check to increase by wanted number' do
       @hosting.add_user(@user)
       @hosting.add_domain('www.nikodemas.lt', @user)
       @hosting.add_domain('www.zaliauskas.lt', @user)
       @hosting.add_domain('www.zaliauskas1.lt', @user)
       @hosting.add_domain('www.zaliauskas2.lt', @user)
-      @hosting.add_domain('www.zaliauskas3.lt', @user)
-      expect(@user.current_money_count).to eq 100
+      expect(@user.domain_count).to fantastic_four
     end
 
     it '.add_domain check hosting money' do
@@ -127,6 +126,4 @@ RSpec.describe Hosting do
     end
   end
 end
-#perki 4 domenus 5-as nemokamai
-#reek
 

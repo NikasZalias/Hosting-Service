@@ -93,8 +93,10 @@ class Hosting
       end
     end
   end
-  def read_user_yaml(file_name)
-    open(file_name) { |f| puts f.read }
-    user = User.new()
+
+  RSpec::Matchers.define :fantastic_four do 4
+    match do |actual|
+      4 == actual
+    end
   end
 end
