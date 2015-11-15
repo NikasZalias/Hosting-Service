@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-03T16:21:51+02:00">2015-11-03T16:21:51+02:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-15T16:16:24+02:00">2015-11-15T16:16:24+02:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">51.6%</span></span>
+    (<span class="covered_percent"><span class="red">50.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.63
+         0.57
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>4</b> files in total.
-    <b>219</b> relevant lines. 
-    <span class="green"><b>113</b> lines covered</span> and
-    <span class="red"><b>106</b> lines missed </span>
+    <b>6</b> files in total.
+    <b>332</b> relevant lines. 
+    <span class="green"><b>166</b> lines covered</span> and
+    <span class="red"><b>166</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -61,32 +61,52 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#ab537c4177f7e181a9776c70b5d4ad0b02c43868" class="src_link" title="lib/domain.rb">lib/domain.rb</a></td>
+        <td class="green strong">91.67 %</td>
+        <td>19</td>
+        <td>12</td>
+        <td>11</td>
+        <td>1</td>
+        <td>0.9</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#5844a00bae60f27875ac93b226c255aa007b786e" class="src_link" title="lib/hosting.rb">lib/hosting.rb</a></td>
-        <td class="red strong">46.75 %</td>
-        <td>132</td>
-        <td>77</td>
-        <td>36</td>
-        <td>41</td>
-        <td>0.5</td>
+        <td class="red strong">44.14 %</td>
+        <td>188</td>
+        <td>111</td>
+        <td>49</td>
+        <td>62</td>
+        <td>0.4</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#d8ef2373b902980e2ddc3bf84c599cc213813016" class="src_link" title="lib/server.rb">lib/server.rb</a></td>
+        <td class="green strong">91.67 %</td>
+        <td>19</td>
+        <td>12</td>
+        <td>11</td>
+        <td>1</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#0108beee07574025c8f0afc9673cb2a58aec5a0a" class="src_link" title="lib/user.rb">lib/user.rb</a></td>
-        <td class="yellow strong">87.88 %</td>
-        <td>57</td>
-        <td>33</td>
-        <td>29</td>
+        <td class="yellow strong">88.24 %</td>
+        <td>58</td>
+        <td>34</td>
+        <td>30</td>
         <td>4</td>
         <td>1.5</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#5a131ce1691739e1b70d5efa94b48392e8df0ff0" class="src_link" title="spec/hosting_spec.rb">spec/hosting_spec.rb</a></td>
-        <td class="red strong">37.5 %</td>
-        <td>152</td>
-        <td>96</td>
-        <td>36</td>
-        <td>60</td>
+        <td class="red strong">35.33 %</td>
+        <td>232</td>
+        <td>150</td>
+        <td>53</td>
+        <td>97</td>
         <td>0.4</td>
       </tr>
       
@@ -250,14 +270,146 @@
   </pre>
 </div>
       
+        <div class="source_table" id="ab537c4177f7e181a9776c70b5d4ad0b02c43868">
+  <div class="header">
+    <h3>lib/domain.rb</h3>
+    <h4><span class="green">91.67 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;user&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;admin&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;yaml&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;hosting&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Domain</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :id, :name, :price</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(id, name, price)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @id = id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @name = name</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @price = price</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.from_yaml(obj)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    Domain.new(obj[&#39;id&#39;], obj[&#39;name&#39;], obj[&#39;price&#39;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="5844a00bae60f27875ac93b226c255aa007b786e">
   <div class="header">
     <h3>lib/hosting.rb</h3>
-    <h4><span class="red">46.75 %</span> covered</h4>
+    <h4><span class="red">44.14 %</span> covered</h4>
     <div>
-      <b>77</b> relevant lines. 
-      <span class="green"><b>36</b> lines covered</span> and
-      <span class="red"><b>41</b> lines missed.</span>
+      <b>111</b> relevant lines. 
+      <span class="green"><b>49</b> lines covered</span> and
+      <span class="red"><b>62</b> lines missed.</span>
     </div>
   </div>
   
@@ -282,490 +434,490 @@
           <code class="ruby">require &#39;admin&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas</code>
+          <code class="ruby">require &#39;server&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">class Hosting</code>
+          <code class="ruby">require &#39;domain&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">  attr_reader :title, :user_list, :admin_list, :current_money_count, :account_number</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby"></code>
+          <code class="ruby"># Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize(title, current_money_count, account_number)</code>
+          <code class="ruby">class Hosting</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    @user_list = []</code>
+          <code class="ruby">  attr_reader :title, :user_list, :admin_list, :current_money_count, :account_number, :server_list, :domain_end_list</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="10">
           
-          <code class="ruby">    @admin_list = []</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">    @title = title</code>
+          <code class="ruby">  def initialize(title, current_money_count, account_number)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    @current_money_count = current_money_count</code>
+          <code class="ruby">    @user_list = []</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    @account_number = account_number</code>
+          <code class="ruby">    @admin_list = []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @title = title</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    @current_money_count = current_money_count</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">  def add_admin(obj)</code>
+          <code class="ruby">    @account_number = account_number</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    @admin_list &lt;&lt; obj</code>
+          <code class="ruby">    @server_list = []</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @domain_end_list = []</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="20">
           
-          <code class="ruby">  def add_user(obj)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    @user_list &lt;&lt; obj</code>
+          <code class="ruby">  def add_admin(obj)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    @admin_list &lt;&lt; obj</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">  def del_user(user_id)</code>
+          <code class="ruby">  def add_user(obj)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    user_list.delete_at(user_id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @user_list &lt;&lt; obj</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">  def change_title(new_title)</code>
+          <code class="ruby">  def add_server(obj)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">    @title = new_title</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @server_list &lt;&lt; obj</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  def block_user(user_id, admin)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="33">
-          
-          
-          <code class="ruby">    return unless @admin_list.include? admin</code>
+          <code class="ruby">  def add_domain_end(obj)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="34">
           
           
-          <code class="ruby">    @user_list.each do |j|</code>
+          <code class="ruby">    @domain_end_list &lt;&lt; obj</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
-          
-          <code class="ruby">      next unless j.id == user_id</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="36">
-          
-          
-          <code class="ruby">      j.blocked = true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def del_user(user_id)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="38">
+          
+          
+          <code class="ruby">    user_list.delete_at(user_id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
+        <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">  def login(email, password)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="41">
-          
-          
-          <code class="ruby">    @user_list.each do |i|</code>
+          <code class="ruby">  def del_server(server_id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="42">
           
           
-          <code class="ruby">      next unless i.email == email &amp;&amp; i.password == password</code>
+          <code class="ruby">    server_list.delete_at(server_id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">      return true</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def del_domain_end(domain_id)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="46">
+          
+          
+          <code class="ruby">    @domain_end_list.delete_at(domain_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">  def admin_login(name, password)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="48">
-          
-          
-          <code class="ruby">    @admin_list.each do |i|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="49">
-          
-          
-          <code class="ruby">      if i.name == name &amp;&amp; i.password == password</code>
+          <code class="ruby">  def change_title(new_title)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">        return true</code>
+          <code class="ruby">    @title = new_title</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="52">
-          
-          
-          <code class="ruby">        return false</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
+        <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
-          <code class="ruby">  def edit(user, address, number, account_number, password)</code>
+          <code class="ruby">  def block_user(user_id, admin)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="58">
+        <li class="missed" data-hits="0" data-linenumber="54">
           
           
-          <code class="ruby">    @user_list.each do |i|</code>
+          <code class="ruby">    return unless @admin_list.include? admin</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="59">
+        <li class="missed" data-hits="0" data-linenumber="55">
           
           
-          <code class="ruby">      next unless i == user</code>
+          <code class="ruby">    @user_list.each do |j|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby">      i.address = address</code>
+          <code class="ruby">      next unless j.id == user_id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="61">
+        <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">      i.number = number</code>
+          <code class="ruby">      j.blocked = true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def login(email, password)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="62">
           
           
-          <code class="ruby">      i.account_number = account_number</code>
+          <code class="ruby">    @user_list.each do |i|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="63">
           
           
-          <code class="ruby">      i.password = password</code>
+          <code class="ruby">      next unless i.email == email &amp;&amp; i.password == password</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="missed" data-hits="0" data-linenumber="64">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      return true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="67">
+        <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
-          <code class="ruby">  def add_domain(domain_name, user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="68">
-          
-          
-          <code class="ruby">    @user_list.each do |i|</code>
+          <code class="ruby">  def admin_login(name, password)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="69">
           
           
-          <code class="ruby">      if i == user</code>
+          <code class="ruby">    @admin_list.each do |i|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="70">
           
           
-          <code class="ruby">        i.domains_name = domain_name</code>
+          <code class="ruby">      if i.name == name &amp;&amp; i.password == password</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="71">
           
           
-          <code class="ruby">        i.domain_count = i.domain_count + 1</code>
+          <code class="ruby">        return true</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="72">
-          
-          
-          <code class="ruby">        if i.domain_count &lt; 5</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="73">
-          
-          
-          <code class="ruby">          pay_for_hosting(user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="74">
-          
-          
-          <code class="ruby">          return domain_name</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="75">
-          
-          
-          <code class="ruby">        else if i.domain_count &gt; 5</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="76">
-          
-          
-          <code class="ruby">               pay_for_hosting(user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="77">
-          
-          
-          <code class="ruby">               return domain_name</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="78">
-          
-          
-          <code class="ruby">             else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="79">
-          
-          
-          <code class="ruby">               return domain_name</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
-          
-          
-          <code class="ruby">             end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">      else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="83">
+        <li class="missed" data-hits="0" data-linenumber="73">
           
           
           <code class="ruby">        return false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def edit(user, address, number, account_number, password)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="79">
+          
+          
+          <code class="ruby">    @user_list.each do |i|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="80">
+          
+          
+          <code class="ruby">      next unless i == user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="81">
+          
+          
+          <code class="ruby">      i.address = address</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="82">
+          
+          
+          <code class="ruby">      i.number = number</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="83">
+          
+          
+          <code class="ruby">      i.account_number = account_number</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="84">
+          
+          
+          <code class="ruby">      i.password = password</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
@@ -789,7 +941,7 @@
         <li class="covered" data-hits="1" data-linenumber="88">
           <span class="hits">1</span>
           
-          <code class="ruby">  def pay_for_hosting(user)</code>
+          <code class="ruby">  def add_domain(domain_name, user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="89">
@@ -807,91 +959,91 @@
         <li class="missed" data-hits="0" data-linenumber="91">
           
           
-          <code class="ruby">        i.current_money_count = i.current_money_count - 100</code>
+          <code class="ruby">        i.domains_name = domain_name</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="92">
           
           
-          <code class="ruby">        @current_money_count = @current_money_count + 100</code>
+          <code class="ruby">        i.domain_count = i.domain_count + 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="93">
+        <li class="missed" data-hits="0" data-linenumber="93">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        if i.domain_count &lt; 5</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="missed" data-hits="0" data-linenumber="94">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">          pay_for_hosting(user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="missed" data-hits="0" data-linenumber="95">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">          return domain_name</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="96">
+        <li class="missed" data-hits="0" data-linenumber="96">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        else if i.domain_count &gt; 5</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="97">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="97">
           
-          <code class="ruby">  RSpec::Matchers.define :fantastic_four do 4</code>
+          
+          <code class="ruby">               pay_for_hosting(user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="98">
           
           
-          <code class="ruby">    match do |actual|</code>
+          <code class="ruby">               return domain_name</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="99">
           
           
-          <code class="ruby">      4 == actual</code>
+          <code class="ruby">             else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="missed" data-hits="0" data-linenumber="100">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">               return domain_name</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">             end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="102">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="103">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="103">
           
-          <code class="ruby">  def save_to_file</code>
+          
+          <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="104">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="104">
           
-          <code class="ruby">    File.open(&#39;./Database/data.yml&#39;, &#39;w&#39;) do |w|</code>
+          
+          <code class="ruby">        return false</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="105">
           
-          <code class="ruby">      w.write self.to_yaml</code>
+          
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="106">
@@ -915,142 +1067,610 @@
         <li class="covered" data-hits="1" data-linenumber="109">
           <span class="hits">1</span>
           
-          <code class="ruby">  def check_database_path</code>
+          <code class="ruby">  def pay_for_hosting(user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="110">
           
           
-          <code class="ruby">    File.absolute_path(&#39;./Database/data.yml&#39;)</code>
+          <code class="ruby">    @user_list.each do |i|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="missed" data-hits="0" data-linenumber="111">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      if i == user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="112">
+        <li class="missed" data-hits="0" data-linenumber="112">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        i.current_money_count = i.current_money_count - 100</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="113">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="113">
           
-          <code class="ruby">  RSpec::Matchers.define :check_file_path do |expect|</code>
+          
+          <code class="ruby">        @current_money_count = @current_money_count + 100</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="114">
+        <li class="never" data-hits="" data-linenumber="114">
           
           
-          <code class="ruby">    match do |actual|</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="115">
-          
-          
-          <code class="ruby">    actual[-18..-1] == expect</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="116">
+        <li class="never" data-hits="" data-linenumber="115">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="117">
+        <li class="never" data-hits="" data-linenumber="116">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="118">
+        <li class="never" data-hits="" data-linenumber="117">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="119">
+        <li class="covered" data-hits="1" data-linenumber="118">
           <span class="hits">1</span>
           
-          <code class="ruby">  def register(name, surname, address, number, account_number)</code>
+          <code class="ruby">  RSpec::Matchers.define :fantastic_four do 4</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="120">
+        <li class="missed" data-hits="0" data-linenumber="119">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    match do |actual|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="120">
+          
+          
+          <code class="ruby">      4 == actual</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="121">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="122">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="123">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="123">
           
-          <code class="ruby">  def load_file</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="124">
           <span class="hits">1</span>
           
-          <code class="ruby">    temp = YAML.load_file(&#39;./Database/data.yml&#39;)</code>
+          <code class="ruby">  def save_to_file</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="125">
           <span class="hits">1</span>
           
-          <code class="ruby">    @admin_list = temp.admin_list</code>
+          <code class="ruby">    File.open(&#39;./Database/data.yml&#39;, &#39;w&#39;) do |w|</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="126">
           <span class="hits">1</span>
           
-          <code class="ruby">    @user_list = temp.user_list</code>
+          <code class="ruby">      w.write self.to_yaml</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="127">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="128">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @title = temp.title</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="129">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @current_money_count = temp.current_money_count</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="130">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @account_number = temp.account_number</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="131">
+        <li class="never" data-hits="" data-linenumber="128">
           
           
           <code class="ruby">  end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def check_database_path</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="131">
+          
+          
+          <code class="ruby">    File.absolute_path(&#39;./Database/data.yml&#39;)</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="133">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="134">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  RSpec::Matchers.define :check_file_path do |expect|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="135">
+          
+          
+          <code class="ruby">    match do |actual|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="136">
+          
+          
+          <code class="ruby">    actual[-18..-1] == expect</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="137">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="138">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="140">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def register(name, surname, address, number, account_number, email, person_type, company_name, country,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="141">
+          
+          
+          <code class="ruby">               current_money_count, password)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="142">
+          
+          
+          <code class="ruby">    user = User.new(name, surname, address, number, account_number)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="143">
+          
+          
+          <code class="ruby">    user.set_default_information(password, create_user_id(user), false, 3, nil)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="144">
+          
+          
+          <code class="ruby">    user.set_information(email, person_type, company_name, country, current_money_count)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="145">
+          
+          
+          <code class="ruby">    user.set_more_info(0, &#39;&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="146">
+          
+          
+          <code class="ruby">    add_user(user)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="147">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="148">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="149">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create_user_id(obj)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="150">
+          
+          
+          <code class="ruby">    temp = @user_list.last</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="151">
+          
+          
+          <code class="ruby">    if temp == nil</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="152">
+          
+          
+          <code class="ruby">      obj.id = 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="153">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="154">
+          
+          
+          <code class="ruby">      obj.id = temp.id + 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="155">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="156">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def load_file</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="159">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    temp = YAML.load_file(&#39;./Database/data.yml&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="160">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @admin_list = temp.admin_list</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="161">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @user_list = temp.user_list</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="162">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @domain_end_list = temp.domain_end_list</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="163">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @server_list = temp.server_list</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="164">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @title = temp.title</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="165">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @current_money_count = temp.current_money_count</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="166">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @account_number = temp.account_number</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="167">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="168">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="169">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def pay_for_server(user, server)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="170">
+          
+          
+          <code class="ruby">    user.current_money_count = user.current_money_count - server.price</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="171">
+          
+          
+          <code class="ruby">    @current_money_count = @current_money_count + server.price</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="172">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="173">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="174">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def add_server_to_user(user, server_name)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="175">
+          
+          
+          <code class="ruby">    @user_list.each do |i|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="176">
+          
+          
+          <code class="ruby">      if i == user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="177">
+          
+          
+          <code class="ruby">        @server_list.each do |j|</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="178">
+          
+          
+          <code class="ruby">          if j.name == server_name</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="179">
+          
+          
+          <code class="ruby">            i.server = server_name + &#39; &#39; + (Time.now.to_date).to_s</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="180">
+          
+          
+          <code class="ruby">            pay_for_server(user, j)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="181">
+          
+          
+          <code class="ruby">          end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="182">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="183">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="184">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="185">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="186">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="187">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="188">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="d8ef2373b902980e2ddc3bf84c599cc213813016">
+  <div class="header">
+    <h3>lib/server.rb</h3>
+    <h4><span class="green">91.67 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;user&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;admin&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;yaml&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;hosting&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Server</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :id, :name, :price</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(id, name, price)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @id = id</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @name = name</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @price = price</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.from_yaml(obj)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    Server.new(obj[&#39;id&#39;], obj[&#39;name&#39;], obj[&#39;price&#39;])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -1063,10 +1683,10 @@
         <div class="source_table" id="0108beee07574025c8f0afc9673cb2a58aec5a0a">
   <div class="header">
     <h3>lib/user.rb</h3>
-    <h4><span class="yellow">87.88 %</span> covered</h4>
+    <h4><span class="yellow">88.24 %</span> covered</h4>
     <div>
-      <b>33</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>34</b> relevant lines. 
+      <span class="green"><b>30</b> lines covered</span> and
       <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
@@ -1143,7 +1763,7 @@
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">                :domain_count</code>
+          <code class="ruby">                :domain_count, :server</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -1191,7 +1811,7 @@
         <li class="covered" data-hits="2" data-linenumber="20">
           <span class="hits">2</span>
           
-          <code class="ruby">    set_default_information(&#39;nikaszalias123&#39;, 100, false, 3, &#39;&#39;)</code>
+          <code class="ruby">    set_default_information(&#39;nikaszalias123&#39;, 0, false, 3, &#39;&#39;)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="21">
@@ -1203,7 +1823,7 @@
         <li class="covered" data-hits="2" data-linenumber="22">
           <span class="hits">2</span>
           
-          <code class="ruby">    set_more_info(0)</code>
+          <code class="ruby">    set_more_info(0, &#39;default&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -1221,7 +1841,7 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_default_information(password, id, blocked, status, domains_name)</code>
+          <code class="ruby">  public def set_default_information(password, id, blocked, status, domains_name)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="26">
@@ -1269,7 +1889,7 @@
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_information(email, person_type, company_name, country, current_money_count)</code>
+          <code class="ruby">  public def set_information(email, person_type, company_name, country, current_money_count)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="34">
@@ -1317,7 +1937,7 @@
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_more_info(domain_count)</code>
+          <code class="ruby">  public def set_more_info(domain_count, server)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="42">
@@ -1326,91 +1946,97 @@
           <code class="ruby">    @domain_count = domain_count</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="covered" data-hits="2" data-linenumber="43">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @server = server</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.from_yaml(obj)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="47">
           
           
           <code class="ruby">    User.new(obj[&#39;name&#39;], obj[&#39;surname&#39;], obj[&#39;address&#39;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">             obj[&#39;number&#39;], obj[&#39;account_number&#39;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="50">
+        <li class="covered" data-hits="1" data-linenumber="51">
           <span class="hits">1</span>
           
           <code class="ruby">  def information_yaml(obj)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="51">
+        <li class="missed" data-hits="0" data-linenumber="52">
           
           
           <code class="ruby">    set_default_information(obj[&#39;password&#39;], obj[&#39;id&#39;], obj[&#39;blocked&#39;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby">                            obj[&#39;status&#39;], obj[&#39;domain_name&#39;])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="54">
           
           
           <code class="ruby">    set_information(obj[&#39;email&#39;], obj[&#39;person_type&#39;],</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">                    obj[&#39;company_name&#39;], obj[&#39;country&#39;], obj[&#39;current_money_count&#39;])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
+        <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby">    set_more_info(obj[&#39;domain_count&#39;])</code>
+          <code class="ruby">    set_more_info(obj[&#39;domain_count&#39;], obj[&#39;server&#39;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">end</code>
@@ -1423,11 +2049,11 @@
         <div class="source_table" id="5a131ce1691739e1b70d5efa94b48392e8df0ff0">
   <div class="header">
     <h3>spec/hosting_spec.rb</h3>
-    <h4><span class="red">37.5 %</span> covered</h4>
+    <h4><span class="red">35.33 %</span> covered</h4>
     <div>
-      <b>96</b> relevant lines. 
-      <span class="green"><b>36</b> lines covered</span> and
-      <span class="red"><b>60</b> lines missed.</span>
+      <b>150</b> relevant lines. 
+      <span class="green"><b>53</b> lines covered</span> and
+      <span class="red"><b>97</b> lines missed.</span>
     </div>
   </div>
   
@@ -1458,889 +2084,1369 @@
           <code class="ruby">require &#39;user&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">require &#39;server&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">RSpec.describe Hosting do</code>
+          <code class="ruby">require &#39;domain&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="7">
           
-          <code class="ruby">  context &#39;functions&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">    before(:each) do</code>
+          <code class="ruby">RSpec.describe Hosting do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">      @hosting = Hosting.new(&#39;Title&#39;, 50000, &#39;LT6548978465654&#39;)</code>
+          <code class="ruby">  context &#39;functions&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">      @admin = Admin.new(1, &#39;name&#39;, &#39;password&#39;, 2)</code>
+          <code class="ruby">    before(:each) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">      @user = User.new(&#39;name1&#39;, &#39;surname1&#39;, &#39;address111&#39;,</code>
+          <code class="ruby">      @hosting = Hosting.new(&#39;Title&#39;, 50000, &#39;LT6548978465654&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                       862_324_442_4, &#39;LT6546543198754111116&#39;)</code>
+          <code class="ruby">      @admin = Admin.new(1, &#39;name&#39;, &#39;password&#39;, 2)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">      @wrong_user = User.new(&#39;Nikas&#39;, &#39;Zalias&#39;, &#39;address111&#39;,</code>
+          <code class="ruby">      @user = User.new(&#39;name1&#39;, &#39;surname1&#39;, &#39;address111&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">                             862_324_333, &#39;LT6546543198116&#39;)</code>
+          <code class="ruby">                       862_324_442_4, &#39;LT6546543198754111116&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      @wrong_user = User.new(&#39;Nikas&#39;, &#39;Zalias&#39;, &#39;address111&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                             862_324_333, &#39;LT6546543198116&#39;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.add_admin&#39; do</code>
+          <code class="ruby">      @server = Server.new(1, &#39;Simple&#39;, 50)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      @hosting.add_admin(@admin)</code>
+          <code class="ruby">      @domain_end = Domain.new(1, &#39;.lt&#39;, 25)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">      expect(@hosting.admin_list).to include(@admin)</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.add_user&#39; do</code>
+          <code class="ruby">    it &#39;.add_admin&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="22">
+          
+          
+          <code class="ruby">      @hosting.add_admin(@admin)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="23">
           
           
-          <code class="ruby">      @hosting.add_user(@user)</code>
+          <code class="ruby">      expect(@hosting.admin_list).to include(@admin)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">      expect(@hosting.user_list).not_to be_nil</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.del_user&#39; do</code>
+          <code class="ruby">    it &#39;.add_user&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="27">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="28">
           
           
+          <code class="ruby">      expect(@hosting.user_list).not_to be_nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.del_user&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="33">
           
           
           <code class="ruby">      @hosting.del_user(0)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="34">
           
           
           <code class="ruby">      expect(@hosting.user_list.length).to eq 0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;.change_title&#39; do</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="34">
-          
-          
-          <code class="ruby">      @hosting.change_title(&#39;new0title&#39;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="35">
-          
-          
-          <code class="ruby">      expect(@hosting.title).to eq &#39;new0title&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.block_user fail&#39; do</code>
+          <code class="ruby">    it &#39;.change_title&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="38">
+          
+          
+          <code class="ruby">      @hosting.change_title(&#39;new0title&#39;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="39">
           
           
-          <code class="ruby">      @hosting.add_user(@user)</code>
+          <code class="ruby">      expect(@hosting.title).to eq &#39;new0title&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="40">
-          
-          
-          <code class="ruby">      @hosting.block_user(100, @user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="41">
-          
-          
-          <code class="ruby">      expect(@user.blocked).to eq false</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.block_user&#39; do</code>
+          <code class="ruby">    it &#39;.block_user fail&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="43">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="44">
+          
+          
+          <code class="ruby">      @hosting.block_user(0, @user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="45">
           
           
-          <code class="ruby">      @hosting.add_admin(@admin)</code>
+          <code class="ruby">      expect(@user.blocked).to eq false</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
-          
-          
-          <code class="ruby">      @hosting.add_user(@user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="47">
-          
-          
-          <code class="ruby">      @hosting.block_user(100, @admin)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="48">
-          
-          
-          <code class="ruby">      expect(@user.blocked).to eq true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
+        <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.login&#39; do</code>
+          <code class="ruby">    it &#39;.block_user&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="49">
+          
+          
+          <code class="ruby">      @hosting.add_admin(@admin)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="50">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="51">
+          
+          
+          <code class="ruby">      @hosting.block_user(0, @admin)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="52">
           
           
+          <code class="ruby">      expect(@user.blocked).to eq true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.login&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="56">
+          
+          
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="57">
           
           
           <code class="ruby">      result = @hosting.login(&#39;nzaliauskas@gmail.com&#39;, &#39;nikaszalias123&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
+        <li class="missed" data-hits="0" data-linenumber="58">
           
           
           <code class="ruby">      expect(result).to eq true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="57">
+        <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;.admin_login user fail&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="58">
+        <li class="missed" data-hits="0" data-linenumber="62">
           
           
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="59">
+        <li class="missed" data-hits="0" data-linenumber="63">
           
           
           <code class="ruby">      @hosting.add_admin(@admin)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="64">
           
           
           <code class="ruby">      result = @hosting.admin_login(&#39;nzaliauskas@gmail.com&#39;, &#39;nikaszalias123&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="61">
+        <li class="missed" data-hits="0" data-linenumber="65">
           
           
           <code class="ruby">      expect(result).to eq false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="64">
+        <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;.admin_login&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="65">
+        <li class="missed" data-hits="0" data-linenumber="69">
           
           
           <code class="ruby">      @hosting.add_admin(@admin)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="66">
+        <li class="missed" data-hits="0" data-linenumber="70">
           
           
           <code class="ruby">      result = @hosting.admin_login(&#39;name&#39;, &#39;password&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="67">
+        <li class="missed" data-hits="0" data-linenumber="71">
           
           
           <code class="ruby">      expect(result).to eq true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;.edit fail&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
+        <li class="missed" data-hits="0" data-linenumber="75">
           
           
           <code class="ruby">      @hosting.edit(@user, &#39;address1&#39;, 853_332_578,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">                    &#39;EU97879879879&#39;, &#39;fakepass123&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
+        <li class="missed" data-hits="0" data-linenumber="77">
           
           
           <code class="ruby">      expect(@user.account_number).to eq &#39;LT6546543198754111116&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="76">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;.edit&#39; do</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="77">
-          
-          
-          <code class="ruby">      @hosting.add_user(@user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="78">
-          
-          
-          <code class="ruby">      @hosting.edit(@user, &#39;address_new&#39;, 863_555_444,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">                    &#39;GER987565465464&#39;, &#39;new_password&#39;)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="80">
-          
-          
-          <code class="ruby">      expect(@user.account_number).to eq &#39;GER987565465464&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="83">
+        <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.add_domain fail&#39; do</code>
+          <code class="ruby">    it &#39;.edit&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="81">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="82">
+          
+          
+          <code class="ruby">      @hosting.edit(@user, &#39;address_new&#39;, 863_555_444,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">                    &#39;GER987565465464&#39;, &#39;new_password&#39;)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="84">
           
           
+          <code class="ruby">      expect(@user.account_number).to eq &#39;GER987565465464&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="87">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.add_domain fail&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="88">
+          
+          
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="85">
+        <li class="missed" data-hits="0" data-linenumber="89">
           
           
           <code class="ruby">      result = @hosting.add_domain(&#39;www.nzaliauskas.lt&#39;, @wrong_user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="86">
+        <li class="missed" data-hits="0" data-linenumber="90">
           
           
           <code class="ruby">      expect(result).to eq false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
+        <li class="covered" data-hits="1" data-linenumber="93">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;.add_domain&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="90">
+        <li class="missed" data-hits="0" data-linenumber="94">
           
           
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="91">
+        <li class="missed" data-hits="0" data-linenumber="95">
           
           
           <code class="ruby">      result = @hosting.add_domain(&#39;www.nikodemas.lt&#39;, @user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="92">
-          
-          
-          <code class="ruby">      expect(result).to eq &#39;www.nikodemas.lt&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="93">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="95">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;.add_domain result begin check&#39; do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="96">
           
           
-          <code class="ruby">      @hosting.add_user(@user)</code>
+          <code class="ruby">      expect(result).to eq &#39;www.nikodemas.lt&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="97">
-          
-          
-          <code class="ruby">      result = @hosting.add_domain(&#39;www.nikodemas.lt&#39;, @user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="98">
-          
-          
-          <code class="ruby">      expect(result).to start_with &#39;www.&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="97">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="never" data-hits="" data-linenumber="98">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="101">
+        <li class="covered" data-hits="1" data-linenumber="99">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.add_domain result end check&#39; do</code>
+          <code class="ruby">    it &#39;.add_domain result begin check&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="100">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="101">
+          
+          
+          <code class="ruby">      result = @hosting.add_domain(&#39;www.nikodemas.lt&#39;, @user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="102">
           
           
+          <code class="ruby">      expect(result).to start_with &#39;www.&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="105">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.add_domain result end check&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="106">
+          
+          
+          <code class="ruby">      @hosting.add_domain_end(@domain_end)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="107">
+          
+          
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="103">
+        <li class="missed" data-hits="0" data-linenumber="108">
           
           
           <code class="ruby">      result = @hosting.add_domain(&#39;www.nikodemas.lt&#39;, @user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="104">
+        <li class="missed" data-hits="0" data-linenumber="109">
           
           
-          <code class="ruby">      expect(result).to end_with &#39;.lt&#39;</code>
+          <code class="ruby">      expect(result).to end_with @hosting.domain_end_list.last.name</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="105">
-          
-          
-          <code class="ruby">      # Can I check domain&#39;s endings from the list?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="106">
+        <li class="never" data-hits="" data-linenumber="110">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="107">
+        <li class="never" data-hits="" data-linenumber="111">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="108">
+        <li class="covered" data-hits="1" data-linenumber="112">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;.pay_for_hosting&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="109">
+        <li class="missed" data-hits="0" data-linenumber="113">
           
           
           <code class="ruby">      @hosting.add_user(@user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="110">
-          
-          
-          <code class="ruby">      @hosting.pay_for_hosting(@user)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="111">
-          
-          
-          <code class="ruby">      expect(@user.current_money_count).to eq 400</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="112">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="113">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;.add_domain check to increase by wanted number&#39; do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="114">
           
           
-          <code class="ruby">      @hosting.add_user(@user)</code>
+          <code class="ruby">      @hosting.pay_for_hosting(@user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="115">
           
           
-          <code class="ruby">      @hosting.add_domain(&#39;www.nikodemas.lt&#39;, @user)</code>
+          <code class="ruby">      expect(@user.current_money_count).to eq 400</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="116">
+        <li class="never" data-hits="" data-linenumber="116">
           
           
-          <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas.lt&#39;, @user)</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="117">
+        <li class="covered" data-hits="1" data-linenumber="117">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas1.lt&#39;, @user)</code>
+          <code class="ruby">    it &#39;.add_domain check to increase by wanted number&#39; do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="118">
           
           
-          <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas2.lt&#39;, @user)</code>
+          <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="119">
           
           
-          <code class="ruby">      expect(@user.domain_count).to fantastic_four</code>
+          <code class="ruby">      @hosting.add_domain(&#39;www.nikodemas.lt&#39;, @user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="120">
+        <li class="missed" data-hits="0" data-linenumber="120">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas.lt&#39;, @user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="121">
+        <li class="missed" data-hits="0" data-linenumber="121">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas1.lt&#39;, @user)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="122">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="122">
           
-          <code class="ruby">    it &#39;.add_domain check hosting money&#39; do</code>
+          
+          <code class="ruby">      @hosting.add_domain(&#39;www.zaliauskas2.lt&#39;, @user)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="123">
           
           
+          <code class="ruby">      expect(@user.domain_count).to fantastic_four</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="124">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="125">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="126">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.add_domain check hosting money&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="127">
+          
+          
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="124">
+        <li class="missed" data-hits="0" data-linenumber="128">
           
           
           <code class="ruby">      @hosting.add_domain(&#39;www.nikodemas.lt&#39;, @user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="125">
+        <li class="missed" data-hits="0" data-linenumber="129">
           
           
           <code class="ruby">      expect(@hosting.current_money_count).to eq 50100</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="126">
+        <li class="never" data-hits="" data-linenumber="130">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="131">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="128">
+        <li class="covered" data-hits="1" data-linenumber="132">
           <span class="hits">1</span>
           
           <code class="ruby">    it &#39;.save_to_file&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="129">
+        <li class="missed" data-hits="0" data-linenumber="133">
           
           
           <code class="ruby">      @hosting.add_user(@user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="130">
+        <li class="missed" data-hits="0" data-linenumber="134">
           
           
           <code class="ruby">      @hosting.add_admin(@admin)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="131">
-          
-          
-          <code class="ruby">      expect(@hosting.save_to_file).not_to be_nil</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="132">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="133">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="134">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;.check_database_path&#39; do</code>
-        </li>
-      
         <li class="missed" data-hits="0" data-linenumber="135">
           
           
-          <code class="ruby">      path = @hosting.check_database_path</code>
+          <code class="ruby">      @hosting.add_server(@server)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="136">
           
           
-          <code class="ruby">      expect(path).to check_file_path(&#39;/Database/data.yml&#39;)</code>
+          <code class="ruby">      @hosting.save_to_file</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="137">
+        <li class="missed" data-hits="0" data-linenumber="137">
+          
+          
+          <code class="ruby">      file = File.open(&#39;./database/data.yml&#39;, &#39;rb&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="138">
+          
+          
+          <code class="ruby">      content = file.read</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="139">
+          
+          
+          <code class="ruby">      file_ready = File.open(&#39;./database/file_ready&#39;, &#39;rb&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="140">
+          
+          
+          <code class="ruby">      content_ready = file_ready.read</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="141">
+          
+          
+          <code class="ruby">      expect(content).to eq content_ready</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="138">
+        <li class="never" data-hits="" data-linenumber="143">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="139">
+        <li class="covered" data-hits="1" data-linenumber="144">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;.load_file&#39; do</code>
+          <code class="ruby">    it &#39;.check_database_path&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="140">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="145">
           
-          <code class="ruby">      @hosting.add_user(@user)</code>
+          
+          <code class="ruby">      path = @hosting.check_database_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="141">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @hosting.save_to_file</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="142">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      @hosting.load_file</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="143">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(@hosting.to_yaml).not_to contain_exactly(</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="144">
+        <li class="missed" data-hits="0" data-linenumber="146">
           
           
-          <code class="ruby">                                          :id =&gt; 2,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="145">
-          
-          
-          <code class="ruby">                                          :name =&gt; &#39;admin_hosting&#39;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="146">
-          
-          
-          <code class="ruby">                                          :password =&gt; &#39;123.admin.123&#39;,</code>
+          <code class="ruby">      expect(path).to check_file_path(&#39;/Database/data.yml&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="147">
           
           
-          <code class="ruby">                                          :status =&gt; 2</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="148">
           
           
-          <code class="ruby">                                      )</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="149">
           
           
+          <code class="ruby">    #perdaryti</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="150">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.load_file&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="151">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="152">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @hosting.save_to_file</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="153">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @hosting.load_file</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="154">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      file_loaded = @hosting</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="155">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      File.open(&#39;./Database/data_load_test.yml&#39;, &#39;w&#39;) do |w|</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="156">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        w.write @hosting.to_yaml</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      file = YAML.load_file(&#39;./Database/data.yml&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="159">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(file).not_to eq file_loaded</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="160">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="150">
+        <li class="never" data-hits="" data-linenumber="161">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="162">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.register&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="163">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="164">
+          
+          
+          <code class="ruby">      @hosting.register(&#39;NikasReg&#39;, &#39;ZaliasReg&#39;, &#39;Giedros7Reg&#39;, 863330227, &#39;LT132165489746546&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="165">
+          
+          
+          <code class="ruby">                        &#39;nzaliasRed@gmail.com&#39;, &#39;CompanyReg&#39;, &#39;GoogleReg&#39;, &#39;LithuaniaReg&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="166">
+          
+          
+          <code class="ruby">                        500, &#39;password.123Reg&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="167">
+          
+          
+          <code class="ruby">      @hosting.save_to_file</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="168">
+          
+          
+          <code class="ruby">      @hosting.load_file</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="169">
+          
+          
+          <code class="ruby">      expect(@hosting.user_list.last).to have_attributes(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="170">
+          
+          
+          <code class="ruby">                                          name: &#39;NikasReg&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="171">
+          
+          
+          <code class="ruby">                                          surname: &#39;ZaliasReg&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="172">
+          
+          
+          <code class="ruby">                                          address: &#39;Giedros7Reg&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="173">
+          
+          
+          <code class="ruby">                                          number: 863330227,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="174">
+          
+          
+          <code class="ruby">                                          account_number: &#39;LT132165489746546&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="175">
+          
+          
+          <code class="ruby">                                      )</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="176">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="177">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="178">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.pay_for_server&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="179">
+          
+          
+          <code class="ruby">      @hosting.pay_for_server(@user, @server)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="180">
+          
+          
+          <code class="ruby">      expect(@user.current_money_count).to eq 450</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="181">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="182">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="183">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.add_server&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="184">
+          
+          
+          <code class="ruby">      @hosting.add_server(@server)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="185">
+          
+          
+          <code class="ruby">      expect(@hosting.server_list.last).to have_attributes(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="186">
+          
+          
+          <code class="ruby">                                          id: 1,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="187">
+          
+          
+          <code class="ruby">                                          name: &#39;Simple&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="188">
+          
+          
+          <code class="ruby">                                          price: 50</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="189">
+          
+          
+          <code class="ruby">                                      )</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="190">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="191">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="192">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.del_server&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="193">
+          
+          
+          <code class="ruby">      @hosting.add_server(@server)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="194">
+          
+          
+          <code class="ruby">      @hosting.del_server(0)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="195">
+          
+          
+          <code class="ruby">      expect(@hosting.server_list).to eq []</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="196">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="197">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="198">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.add_server_to_user&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="199">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="200">
+          
+          
+          <code class="ruby">      @hosting.add_server(@server)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="201">
+          
+          
+          <code class="ruby">      @hosting.add_server_to_user(@user, &#39;Simple&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="202">
+          
+          
+          <code class="ruby">      expect(@user.server).to start_with &#39;Simple&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="203">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="204">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="205">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.add_server_to_user payment&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="206">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="207">
+          
+          
+          <code class="ruby">      @hosting.add_server(@server)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="208">
+          
+          
+          <code class="ruby">      @hosting.add_server_to_user(@user, &#39;Simple&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="209">
+          
+          
+          <code class="ruby">      expect(@user.current_money_count).to eq 450</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="210">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="211">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="212">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.add_server_to_user date check&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="213">
+          
+          
+          <code class="ruby">      @hosting.add_user(@user)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="214">
+          
+          
+          <code class="ruby">      @hosting.add_server(@server)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="215">
+          
+          
+          <code class="ruby">      @hosting.add_server_to_user(@user, &#39;Simple&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="216">
+          
+          
+          <code class="ruby">      @hosting.save_to_file</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="217">
+          
+          
+          <code class="ruby">      expect(@user.server).not_to end_with (Time.now.to_date + 365).to_s</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="218">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="219">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="220">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.add_domain_end&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="221">
+          
+          
+          <code class="ruby">      @hosting.add_domain_end(@domain_end)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="222">
+          
+          
+          <code class="ruby">      expect(@hosting.domain_end_list).to include(@domain_end)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="223">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="224">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="225">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;.del_domain_end&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="226">
+          
+          
+          <code class="ruby">      @hosting.add_domain_end(@domain_end)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="227">
+          
+          
+          <code class="ruby">      @hosting.del_domain_end(0)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="228">
+          
+          
+          <code class="ruby">      expect(@hosting.domain_end_list.length).to eq 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="229">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="230">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="151">
+        <li class="never" data-hits="" data-linenumber="231">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="152">
+        <li class="never" data-hits="" data-linenumber="232">
           
           
           <code class="ruby"></code>

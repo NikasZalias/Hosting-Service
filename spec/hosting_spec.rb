@@ -2,6 +2,8 @@ require 'rspec'
 require 'hosting'
 require 'admin'
 require 'user'
+require 'server'
+require 'domain'
 
 RSpec.describe Hosting do
   context 'functions' do
@@ -12,6 +14,8 @@ RSpec.describe Hosting do
                        862_324_442_4, 'LT6546543198754111116')
       @wrong_user = User.new('Nikas', 'Zalias', 'address111',
                              862_324_333, 'LT6546543198116')
+      @server = Server.new(1, 'Simple', 50)
+      @domain_end = Domain.new(1, '.lt', 25)
     end
 
     it '.add_admin' do
@@ -37,14 +41,14 @@ RSpec.describe Hosting do
 
     it '.block_user fail' do
       @hosting.add_user(@user)
-      @hosting.block_user(100, @user)
+      @hosting.block_user(0, @user)
       expect(@user.blocked).to eq false
     end
 
     it '.block_user' do
       @hosting.add_admin(@admin)
       @hosting.add_user(@user)
-      @hosting.block_user(100, @admin)
+      @hosting.block_user(0, @admin)
       expect(@user.blocked).to eq true
     end
 
@@ -99,10 +103,10 @@ RSpec.describe Hosting do
     end
 
     it '.add_domain result end check' do
+      @hosting.add_domain_end(@domain_end)
       @hosting.add_user(@user)
       result = @hosting.add_domain('www.nikodemas.lt', @user)
-      expect(result).to end_with '.lt'
-      # Can I check domain's endings from the list?
+      expect(result).to end_with @hosting.domain_end_list.last.name
     end
 
     it '.pay_for_hosting' do
@@ -128,7 +132,13 @@ RSpec.describe Hosting do
     it '.save_to_file' do
       @hosting.add_user(@user)
       @hosting.add_admin(@admin)
-      expect(@hosting.save_to_file).not_to be_nil
+      @hosting.add_server(@server)
+      @hosting.save_to_file
+      file = File.open('./database/data.yml', 'rb')
+      content = file.read
+      file_ready = File.open('./database/file_ready', 'rb')
+      content_ready = file_ready.read
+      expect(content).to eq content_ready
     end
 
     it '.check_database_path' do
@@ -136,16 +146,86 @@ RSpec.describe Hosting do
       expect(path).to check_file_path('/Database/data.yml')
     end
 
+    #perdaryti
     it '.load_file' do
       @hosting.add_user(@user)
       @hosting.save_to_file
       @hosting.load_file
-      expect(@hosting.to_yaml).not_to contain_exactly(
-                                          :id => 2,
-                                          :name => 'admin_hosting',
-                                          :password => '123.admin.123',
-                                          :status => 2
+      file_loaded = @hosting
+      File.open('./Database/data_load_test.yml', 'w') do |w|
+        w.write @hosting.to_yaml
+      end
+      file = YAML.load_file('./Database/data.yml')
+      expect(file).not_to eq file_loaded
+    end
+
+    it '.register' do
+      @hosting.add_user(@user)
+      @hosting.register('NikasReg', 'ZaliasReg', 'Giedros7Reg', 863330227, 'LT132165489746546',
+                        'nzaliasRed@gmail.com', 'CompanyReg', 'GoogleReg', 'LithuaniaReg',
+                        500, 'password.123Reg')
+      @hosting.save_to_file
+      @hosting.load_file
+      expect(@hosting.user_list.last).to have_attributes(
+                                          name: 'NikasReg',
+                                          surname: 'ZaliasReg',
+                                          address: 'Giedros7Reg',
+                                          number: 863330227,
+                                          account_number: 'LT132165489746546'
                                       )
+    end
+
+    it '.pay_for_server' do
+      @hosting.pay_for_server(@user, @server)
+      expect(@user.current_money_count).to eq 450
+    end
+
+    it '.add_server' do
+      @hosting.add_server(@server)
+      expect(@hosting.server_list.last).to have_attributes(
+                                          id: 1,
+                                          name: 'Simple',
+                                          price: 50
+                                      )
+    end
+
+    it '.del_server' do
+      @hosting.add_server(@server)
+      @hosting.del_server(0)
+      expect(@hosting.server_list).to eq []
+    end
+
+    it '.add_server_to_user' do
+      @hosting.add_user(@user)
+      @hosting.add_server(@server)
+      @hosting.add_server_to_user(@user, 'Simple')
+      expect(@user.server).to start_with 'Simple'
+    end
+
+    it '.add_server_to_user payment' do
+      @hosting.add_user(@user)
+      @hosting.add_server(@server)
+      @hosting.add_server_to_user(@user, 'Simple')
+      expect(@user.current_money_count).to eq 450
+    end
+
+    it '.add_server_to_user date check' do
+      @hosting.add_user(@user)
+      @hosting.add_server(@server)
+      @hosting.add_server_to_user(@user, 'Simple')
+      @hosting.save_to_file
+      expect(@user.server).not_to end_with (Time.now.to_date + 365).to_s
+    end
+
+    it '.add_domain_end' do
+      @hosting.add_domain_end(@domain_end)
+      expect(@hosting.domain_end_list).to include(@domain_end)
+    end
+
+    it '.del_domain_end' do
+      @hosting.add_domain_end(@domain_end)
+      @hosting.del_domain_end(0)
+      expect(@hosting.domain_end_list.length).to eq 0
     end
   end
 end
