@@ -140,6 +140,12 @@ class Hosting
     end
   end
 
+  def save_to_database
+    File.open('./Database/database.yml', 'w') do |w|
+      w.write self.to_yaml
+    end
+  end
+
   def check_database_path
     File.absolute_path('./Database/data.yml')
   end
@@ -179,6 +185,17 @@ class Hosting
     @account_number = temp.account_number
   end
 
+  def load_database
+    temp = YAML.load_file('./Database/database.yml')
+    @admin_list = temp.admin_list
+    @user_list = temp.user_list
+    @domain_end_list = temp.domain_end_list
+    @server_list = temp.server_list
+    @title = temp.title
+    @current_money_count = temp.current_money_count
+    @account_number = temp.account_number
+  end
+
   def pay_for_server(user, server)
     user.current_money_count = user.current_money_count - server.price
     @current_money_count = @current_money_count + server.price
@@ -203,6 +220,16 @@ class Hosting
       if i.id == admin_id
         @admin = i
         return @admin
+      end
+    end
+  end
+
+  def find_user(user_id)
+    @user = nil
+    @user_list.each do |i|
+      if i.id == user_id
+        @user = i
+        return @user
       end
     end
   end

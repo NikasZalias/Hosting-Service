@@ -1,0 +1,20 @@
+--- !ruby/object:Hosting
+user_list: []
+admin_list: []
+title: Nikas
+current_money_count: 50000
+account_number: LT32154545787899
+server_list:
+- !ruby/object:Server
+  id: 1
+  name: Small
+  price: 10
+- !ruby/object:Server
+  id: 2
+  name: Medium
+  price: 30
+- !ruby/object:Server
+  id: 3
+  name: Large
+  price: 60
+domain_end_list: []

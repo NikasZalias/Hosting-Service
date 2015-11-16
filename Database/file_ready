@@ -20,7 +20,7 @@ user_list:
   server: default
 admin_list:
 - !ruby/object:Admin
-  id: 1
+  id: 666999
   name: name
   password: password
   status: 2

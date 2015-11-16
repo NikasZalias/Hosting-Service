@@ -246,6 +246,12 @@ RSpec.describe Hosting do
       admin_found = @hosting.find_admin(666999)
       expect(admin_found).to eq @admin
     end
+
+    it '.find_user' do
+      @hosting.add_user(@user)
+      user_found = @hosting.find_user(0)
+      expect(user_found).to eq @user
+    end
   end
 end
 
