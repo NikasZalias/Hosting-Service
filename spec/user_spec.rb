@@ -1,4 +1,4 @@
-require 'user'
+require './lib/user'
 require 'rspec'
 require 'yaml'
 

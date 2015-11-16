@@ -1,15 +1,15 @@
 require 'rspec'
-require 'hosting'
-require 'admin'
-require 'user'
-require 'server'
-require 'domain'
+require './lib/hosting'
+require './lib/admin'
+require './lib/user'
+require './lib/server'
+require './lib/domain'
 
 RSpec.describe Hosting do
   context 'functions' do
     before(:each) do
       @hosting = Hosting.new('Title', 50000, 'LT6548978465654')
-      @admin = Admin.new(1, 'name', 'password', 2)
+      @admin = Admin.new(666999, 'name', 'password', 2)
       @user = User.new('name1', 'surname1', 'address111',
                        862_324_442_4, 'LT6546543198754111116')
       @wrong_user = User.new('Nikas', 'Zalias', 'address111',
@@ -34,6 +34,12 @@ RSpec.describe Hosting do
       expect(@hosting.user_list.length).to eq 0
     end
 
+    it '.del_admin' do
+      @hosting.add_admin(@admin)
+      @hosting.del_admin(0)
+      expect(@hosting.admin_list.length).to eq 0
+    end
+
     it '.change_title' do
       @hosting.change_title('new0title')
       expect(@hosting.title).to eq 'new0title'
@@ -50,6 +56,13 @@ RSpec.describe Hosting do
       @hosting.add_user(@user)
       @hosting.block_user(0, @admin)
       expect(@user.blocked).to eq true
+    end
+
+    it '.unblock_user' do
+      @hosting.add_admin(@admin)
+      @hosting.add_user(@user)
+      @hosting.unblock_user(0, @admin)
+      expect(@user.blocked).to eq false
     end
 
     it '.login' do
@@ -226,6 +239,12 @@ RSpec.describe Hosting do
       @hosting.add_domain_end(@domain_end)
       @hosting.del_domain_end(0)
       expect(@hosting.domain_end_list.length).to eq 0
+    end
+
+    it '.find_admin' do
+      @hosting.add_admin(@admin)
+      admin_found = @hosting.find_admin(666999)
+      expect(admin_found).to eq @admin
     end
   end
 end

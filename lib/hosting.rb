@@ -1,8 +1,9 @@
 require 'yaml'
-require 'user'
-require 'admin'
-require 'server'
-require 'domain'
+require './lib/user'
+require './lib/admin'
+require './lib/server'
+require './lib/domain'
+require 'rspec'
 
 # Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas
 class Hosting
@@ -34,6 +35,10 @@ class Hosting
     @domain_end_list << obj
   end
 
+  def del_admin(admin_id)
+    @admin_list.delete_at(admin_id)
+  end
+
   def del_user(user_id)
     user_list.delete_at(user_id)
   end
@@ -55,6 +60,14 @@ class Hosting
     @user_list.each do |j|
       next unless j.id == user_id
       j.blocked = true
+    end
+  end
+
+  def unblock_user(user_id, admin)
+    return unless @admin_list.include? admin
+    @user_list.each do |j|
+      next unless j.id == user_id
+      j.blocked = false
     end
   end
 
@@ -184,5 +197,14 @@ class Hosting
     end
   end
 
+  def find_admin(admin_id)
+    @admin = nil
+    @admin_list.each do |i|
+      if i.id == admin_id
+        @admin = i
+        return @admin
+      end
+    end
+  end
 
 end

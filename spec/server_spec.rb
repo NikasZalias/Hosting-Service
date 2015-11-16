@@ -1,5 +1,5 @@
 require 'rspec'
-require 'server'
+require './lib/server'
 require 'yaml'
 
 RSpec.describe Server do

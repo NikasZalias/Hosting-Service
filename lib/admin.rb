@@ -1,7 +1,7 @@
-require 'user'
+require './lib/user'
 require 'json'
 require 'yaml'
-require 'hosting'
+require './lib/hosting'
 
 # Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas
 class Admin

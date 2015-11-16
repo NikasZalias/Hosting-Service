@@ -1,5 +1,5 @@
 require 'rspec'
-require 'domain'
+require './lib/domain'
 require 'yaml'
 
 RSpec.describe Domain do

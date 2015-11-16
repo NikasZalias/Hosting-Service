@@ -1,6 +1,6 @@
 require 'rspec'
 require 'yaml'
-require 'admin'
+require './lib/admin'
 
 RSpec.describe User do
   context 'creation' do

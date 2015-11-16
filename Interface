@@ -1,0 +1,170 @@
+require './lib/admin'
+require './lib/domain'
+require './lib/hosting'
+require './lib/server'
+require './lib/user'
+require 'yaml'
+
+STDOUT.sync = true
+@user = nil
+
+def start
+  @hosting = Hosting.new('Nikas', 50000, 'LT32154545787899')
+  @hosting.load_file
+  menu
+end
+
+def get_selection(text, range_min, range_max)
+  text = text || ''
+  selection = nil
+  while selection.nil? || !selection.between?(range_min, range_max) do
+    print text
+    selection = get_int
+  end
+  selection
+end
+
+def get_int
+  Integer(gets)
+rescue ArgumentError
+  nil
+end
+
+def register
+  p 'Name: '
+  name = String(gets)
+  p 'Surname: '
+  surname = String(gets)
+  p 'Address: '
+  address = String(gets)
+  p 'Number: '
+  number = Integer(gets)
+  p 'Email: '
+  email = String(gets)
+  p 'Password: '
+  password = String(gets)
+  p 'Country: '
+  country = String(gets)
+  p 'That\'s cool! But we need more information about you so please fill some more fields.'
+  p 'Person type(Individual or Company):'
+  person_type = String(gets)
+  p 'Company: '
+  company_name = String(gets)
+  p 'Account number: '
+  account_number = String(gets)
+  p 'How much money you want to deposit: '
+  current_money_count = Integer(gets)
+
+  @hosting.register(name, surname, address, number, account_number, email, person_type, company_name,
+                              country,
+                    current_money_count, password)
+  @hosting.save_to_file
+end
+
+def delete_user
+  p 'Enter user\'s ID to delete: '
+  del_id = Integer(gets)
+  @hosting.del_user(del_id)
+  @hosting.save_to_file
+end
+
+def add_admin
+  p 'Admin\'s ID: '
+  id = Integer(gets)
+  p 'Admin\'s name: '
+  name = String(gets)
+  p 'Admin\'s password: '
+  password = String(gets)
+  admin = Admin.new(id, name, password, 2)
+  @hosting.add_admin(admin)
+  @hosting.save_to_file
+end
+
+def delete_admin
+  p 'Enter admin\'s ID to delete: '
+  del_id = Integer(gets)
+  @hosting.del_admin(del_id)
+  @hosting.save_to_file
+end
+
+def block_user
+  p 'Prove that you are admin (Enter your ID): '
+  admin_id = Integer(gets)
+  admin = @hosting.find_admin(admin_id)
+  @hosting.admin_list.each do |i|
+    if i == admin
+      p 'Enter user\'s ID to block: '
+      user_id = Integer(gets)
+      @hosting.block_user(user_id, i)
+      @hosting.user_list.each do |i|
+        if i.id == user_id
+          if i.blocked == true
+            p 'User blocked!'
+          end
+        end
+      end
+    end
+  end
+  @hosting.save_to_file
+end
+
+def unblock_user
+  p 'Prove that you are admin (Enter your ID): '
+  admin_id = Integer(gets)
+  admin = @hosting.find_admin(admin_id)
+  @hosting.admin_list.each do |i|
+    if i == admin
+      p 'Enter user\'s ID to unblock: '
+      user_id = Integer(gets)
+      @hosting.unblock_user(user_id, i)
+      @hosting.user_list.each do |i|
+        if i.id == user_id
+          if i.blocked == false
+            p 'User unblocked!'
+          end
+        end
+      end
+    end
+  end
+  @hosting.save_to_file
+end
+
+def menu
+  selection = nil
+  while selection != 0
+    print("\n------------------")
+    text = "\n Main menu\n" +
+        "1. Register\n" +
+        "2. Delete user\n" +
+        "3. Add admin\n" +
+        "4. Delete admin\n" +
+        "5. Block user\n" +
+        "6. Unblock user\n" +
+        "0. Exit\n" +
+        "\n" +
+      "------------------\n\n" +
+        'Select an option: '
+    selection = get_selection(text, 0, 15)
+
+    case selection
+      when 1
+        register
+      when 2
+        delete_user
+      when 3
+        add_admin
+      when 4
+        delete_admin
+      when 5
+        block_user
+      when 6
+        unblock_user
+      when 0
+        return 0
+      else
+        #noop
+    end
+  end
+end
+
+start

@@ -1,26 +1,43 @@
 --- !ruby/object:Hosting
 user_list:
 - !ruby/object:User
-  name: name1
-  surname: surname1
-  address: address111
-  number: 8623244424
-  account_number: LT6546543198754111116
-  password: nikaszalias123
+  name: |
+    Vaiva
+  surname: |
+    Gliebute
+  address: |
+    Uosiu sodu 8-9
+  number: 8654587
+  account_number: |
+    LT6547987987987554
+  password: |
+    gliebuteuser
   id: 0
-  blocked: false
+  blocked: true
   status: 3
-  domains_name: ''
-  email: nzaliauskas@gmail.com
-  person_type: Company
-  company_name: Google
-  country: USA
-  current_money_count: 500
+  domains_name: 
+  email: |
+    gliebute@gmail.com
+  person_type: |
+    Individual
+  company_name: |
+    Bedarbe
+  country: |
+    Lithuania
+  current_money_count: 5000
   domain_count: 0
-  server: default
-admin_list: []
+  server: ''
+admin_list:
+- &1 !ruby/object:Admin
+  id: 6699
+  name: |
+    Nikas
+  password: |
+    nikaszaliasadmin
+  status: 2
 title: Title
 current_money_count: 50000
 account_number: LT6548978465654
 server_list: []
 domain_end_list: []
+admin: *1

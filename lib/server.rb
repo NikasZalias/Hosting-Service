@@ -1,7 +1,7 @@
-require 'user'
-require 'admin'
+require './lib/user'
+require './lib/admin'
 require 'yaml'
-require 'hosting'
+require './lib/hosting'
 
 
 class Server
