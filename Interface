@@ -123,7 +123,7 @@ def unblock_user
     if i == admin
       p 'Enter user\'s ID to unblock: '
       user_id = Integer(gets)
-      @hosting.unblock_user(user_id, i)
+      @hosting.unblock_user(user_id)
       @hosting.user_list.each do |i|
         if i.id == user_id
           if i.blocked == false

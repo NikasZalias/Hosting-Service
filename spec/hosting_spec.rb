@@ -8,8 +8,8 @@ require './lib/domain'
 RSpec.describe Hosting do
   context 'functions' do
     before(:each) do
-      @hosting = Hosting.new('Title', 50000, 'LT6548978465654')
-      @admin = Admin.new(666999, 'name', 'password', 2)
+      @hosting = Hosting.new('Title', 500_00, 'LT6548978465654')
+      @admin = Admin.new(666_999, 'name', 'password', 2)
       @user = User.new('name1', 'surname1', 'address111',
                        862_324_442_4, 'LT6546543198754111116')
       @wrong_user = User.new('Nikas', 'Zalias', 'address111',
@@ -61,7 +61,7 @@ RSpec.describe Hosting do
     it '.unblock_user' do
       @hosting.add_admin(@admin)
       @hosting.add_user(@user)
-      @hosting.unblock_user(0, @admin)
+      @hosting.unblock_user(0)
       expect(@user.blocked).to eq false
     end
 
@@ -87,17 +87,17 @@ RSpec.describe Hosting do
     it '.edit fail' do
       @hosting.edit(@user, 'address1', 853_332_578,
                     'EU97879879879', 'fakepass123')
-      expect(@user.account_number).to eq 'LT6546543198754111116'
+      expect(@user.information_array[4]).to eq 'LT6546543198754111116'
     end
 
     it '.edit' do
       @hosting.add_user(@user)
       @hosting.edit(@user, 'address_new', 863_555_444,
                     'GER987565465464', 'new_password')
-      expect(@user.account_number).to eq 'GER987565465464'
+      expect(@user.information_array[4]).to eq 'GER987565465464'
     end
 
-    it '.add_domain fail' do
+    it '.add domain fail' do
       @hosting.add_user(@user)
       result = @hosting.add_domain('www.nzaliauskas.lt', @wrong_user)
       expect(result).to eq false
@@ -125,21 +125,26 @@ RSpec.describe Hosting do
     it '.pay_for_hosting' do
       @hosting.add_user(@user)
       @hosting.pay_for_hosting(@user)
-      expect(@user.current_money_count).to eq 400
+      expect(@user.more_info_array[4]).to eq 400
     end
+
     it '.add_domain check to increase by wanted number' do
       @hosting.add_user(@user)
       @hosting.add_domain('www.nikodemas.lt', @user)
       @hosting.add_domain('www.zaliauskas.lt', @user)
       @hosting.add_domain('www.zaliauskas1.lt', @user)
       @hosting.add_domain('www.zaliauskas2.lt', @user)
-      expect(@user.domain_count).to fantastic_four
+      expect(@user.last_info_array[0]).to fantastic_four
     end
 
     it '.add_domain check hosting money' do
       @hosting.add_user(@user)
       @hosting.add_domain('www.nikodemas.lt', @user)
-      expect(@hosting.current_money_count).to eq 50100
+      @hosting.add_domain('www.nikodemas1.lt', @user)
+      @hosting.add_domain('www.nikodemas2.lt', @user)
+      @hosting.add_domain('www.nikodemas3.lt', @user)
+      @hosting.add_domain('www.nikodemas4.lt', @user)
+      expect(@hosting.current_money_count).to eq 504_00
     end
 
     it '.save_to_file' do
@@ -159,7 +164,7 @@ RSpec.describe Hosting do
       expect(path).to check_file_path('/Database/data.yml')
     end
 
-    #perdaryti
+    # perdaryti
     it '.load_file' do
       @hosting.add_user(@user)
       @hosting.save_to_file
@@ -174,32 +179,29 @@ RSpec.describe Hosting do
 
     it '.register' do
       @hosting.add_user(@user)
-      @hosting.register('NikasReg', 'ZaliasReg', 'Giedros7Reg', 863330227, 'LT132165489746546',
-                        'nzaliasRed@gmail.com', 'CompanyReg', 'GoogleReg', 'LithuaniaReg',
+      @hosting.register('NikasReg', 'ZaliasReg', 'Giedros7Reg',
+                        863_330_227, 'LT132165489746546',
+                        'nzaliasRed@gmail.com', 'CompanyReg',
+                        'GoogleReg', 'LithuaniaReg',
                         500, 'password.123Reg')
       @hosting.save_to_file
       @hosting.load_file
-      expect(@hosting.user_list.last).to have_attributes(
-                                          name: 'NikasReg',
-                                          surname: 'ZaliasReg',
-                                          address: 'Giedros7Reg',
-                                          number: 863330227,
-                                          account_number: 'LT132165489746546'
-                                      )
+      expect(@hosting.user_list.last)
+        .to have_attributes(information_array: ['NikasReg', 'ZaliasReg',
+                                                'Giedros7Reg', 863_330_227,
+                                                'LT132165489746546'])
     end
 
     it '.pay_for_server' do
       @hosting.pay_for_server(@user, @server)
-      expect(@user.current_money_count).to eq 450
+      expect(@user.more_info_array[4]).to eq 450
     end
 
     it '.add_server' do
       @hosting.add_server(@server)
-      expect(@hosting.server_list.last).to have_attributes(
-                                          id: 1,
-                                          name: 'Simple',
-                                          price: 50
-                                      )
+      expect(@hosting.server_list.last).to have_attributes(id: 1,
+                                                           name: 'Simple',
+                                                           price: 50)
     end
 
     it '.del_server' do
@@ -212,14 +214,14 @@ RSpec.describe Hosting do
       @hosting.add_user(@user)
       @hosting.add_server(@server)
       @hosting.add_server_to_user(@user, 'Simple')
-      expect(@user.server).to start_with 'Simple'
+      expect(@user.last_info_array[1]).to start_with 'Simple'
     end
 
     it '.add_server_to_user payment' do
       @hosting.add_user(@user)
       @hosting.add_server(@server)
       @hosting.add_server_to_user(@user, 'Simple')
-      expect(@user.current_money_count).to eq 450
+      expect(@user.more_info_array[4]).to eq 450
     end
 
     it '.add_server_to_user date check' do
@@ -227,7 +229,7 @@ RSpec.describe Hosting do
       @hosting.add_server(@server)
       @hosting.add_server_to_user(@user, 'Simple')
       @hosting.save_to_file
-      expect(@user.server).not_to end_with (Time.now.to_date + 365).to_s
+      expect(@user.last_info_array[1]).not_to end_with((Time.now.to_date + 365).to_s)
     end
 
     it '.add_domain_end' do
@@ -243,7 +245,7 @@ RSpec.describe Hosting do
 
     it '.find_admin' do
       @hosting.add_admin(@admin)
-      admin_found = @hosting.find_admin(666999)
+      admin_found = @hosting.find_admin(666_999)
       expect(admin_found).to eq @admin
     end
 
@@ -252,6 +254,11 @@ RSpec.describe Hosting do
       user_found = @hosting.find_user(0)
       expect(user_found).to eq @user
     end
+
+    it 'create_user_id' do
+      @hosting.create_user_id(@user)
+      @hosting.add_user(@user)
+      expect(@hosting.user_list.last.default_info_array[1]).to eq 0
+    end
   end
 end
-

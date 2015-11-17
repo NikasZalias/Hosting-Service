@@ -7,7 +7,8 @@ require 'rspec'
 
 # Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas
 class Hosting
-  attr_reader :title, :user_list, :admin_list, :current_money_count, :account_number, :server_list, :domain_end_list
+  attr_reader :title, :user_list, :admin_list, :current_money_count,
+              :account_number, :server_list, :domain_end_list
 
   def initialize(title, current_money_count, account_number)
     @user_list = []
@@ -19,20 +20,20 @@ class Hosting
     @domain_end_list = []
   end
 
-  def add_admin(obj)
-    @admin_list << obj
+  def add_admin(admin_obj)
+    @admin_list << admin_obj
   end
 
-  def add_user(obj)
-    @user_list << obj
+  def add_user(user_obj)
+    @user_list << user_obj
   end
 
-  def add_server(obj)
-    @server_list << obj
+  def add_server(server_obj)
+    @server_list << server_obj
   end
 
-  def add_domain_end(obj)
-    @domain_end_list << obj
+  def add_domain_end(domain_end_obj)
+    @domain_end_list << domain_end_obj
   end
 
   def del_admin(admin_id)
@@ -56,31 +57,35 @@ class Hosting
   end
 
   def block_user(user_id, admin)
+    temp_id = user_id
     return unless @admin_list.include? admin
-    @user_list.each do |j|
-      next unless j.id == user_id
-      j.blocked = true
+    @user_list.each do |user|
+      next unless user.default_info_array[1] == temp_id
+      user.block
     end
   end
 
-  def unblock_user(user_id, admin)
-    return unless @admin_list.include? admin
-    @user_list.each do |j|
-      next unless j.id == user_id
-      j.blocked = false
+  def unblock_user(user_id)
+    temp_id = user_id
+    @user_list.each do |user|
+      (user.block if user.blocked) if user.default_info_array[1] == temp_id
     end
   end
 
   def login(email, password)
-    @user_list.each do |i|
-      next unless i.email == email && i.password == password
+    temp_email = email
+    temp_pass = password
+    @user_list.each do |user|
+      next unless user.email == temp_email && user.password == temp_pass
       return true
     end
   end
 
   def admin_login(name, password)
-    @admin_list.each do |i|
-      if i.name == name && i.password == password
+    temp_name = name
+    temp_pass = password
+    @admin_list.each do |user|
+      if user.name == temp_name && user.password == temp_pass
         return true
       else
         return false
@@ -89,29 +94,23 @@ class Hosting
   end
 
   def edit(user, address, number, account_number, password)
-    @user_list.each do |i|
-      next unless i == user
-      i.address = address
-      i.number = number
-      i.account_number = account_number
-      i.password = password
+    temp_user = user
+    @user_list.each do |user_search|
+      next unless user_search == temp_user
+      user_search.edit(address, number, account_number, password)
     end
   end
 
   def add_domain(domain_name, user)
-    @user_list.each do |i|
-      if i == user
-        i.domains_name = domain_name
-        i.domain_count = i.domain_count + 1
-        if i.domain_count < 5
+    @user_list.each do |user_search|
+      if user_search == user
+        user_search.domain_name(domain_name)
+        fixnum = user_search.domain_count(1)
+        if fixnum != 5
           pay_for_hosting(user)
           return domain_name
-        else if i.domain_count > 5
-               pay_for_hosting(user)
-               return domain_name
-             else
-               return domain_name
-             end
+        else
+          return domain_name
         end
       else
         return false
@@ -120,29 +119,30 @@ class Hosting
   end
 
   def pay_for_hosting(user)
-    @user_list.each do |i|
-      if i == user
-        i.current_money_count = i.current_money_count - 100
-        @current_money_count = @current_money_count + 100
+    temp_user = user
+    @user_list.each do |user_search|
+      if user_search == temp_user
+        user_search.balance(-100)
+        @current_money_count += 100
       end
     end
   end
 
-  RSpec::Matchers.define :fantastic_four do 4
+  RSpec::Matchers.define :fantastic_four do
     match do |actual|
       4 == actual
     end
   end
 
   def save_to_file
-    File.open('./Database/data.yml', 'w') do |w|
-      w.write self.to_yaml
+    File.open('./Database/data.yml', 'w') do |write|
+      write.write to_yaml
     end
   end
 
   def save_to_database
-    File.open('./Database/database.yml', 'w') do |w|
-      w.write self.to_yaml
+    File.open('./Database/database.yml', 'w') do |write|
+      write.write to_yaml
     end
   end
 
@@ -152,28 +152,30 @@ class Hosting
 
   RSpec::Matchers.define :check_file_path do |expect|
     match do |actual|
-    actual[-18..-1] == expect
+      actual[-18..-1] == expect
     end
   end
 
-  def register(name, surname, address, number, account_number, email, person_type, company_name, country,
+  def register(name, surname, address, number, account_number,
+               email, person_type, company_name, country,
                current_money_count, password)
     user = User.new(name, surname, address, number, account_number)
     user.set_default_information(password, create_user_id(user), false, 3, nil)
-    user.set_information(email, person_type, company_name, country, current_money_count)
+    user.set_information(email, person_type, company_name,
+                         country, current_money_count)
     user.set_more_info(0, '')
     add_user(user)
   end
 
-  def create_user_id(obj)
+  def create_user_id(user_obj)
     temp = @user_list.last
-    if temp == nil
-      obj.id = 0
+    if @user_list.length == 0
+      user_obj.default_info_array[1] = 0
     else
-      obj.id = temp.id + 1
+      user_obj.default_info_array[1] = temp.default_info_array[1] + 1
     end
-
   end
+
   def load_file
     temp = YAML.load_file('./Database/data.yml')
     @admin_list = temp.admin_list
@@ -197,41 +199,42 @@ class Hosting
   end
 
   def pay_for_server(user, server)
-    user.current_money_count = user.current_money_count - server.price
-    @current_money_count = @current_money_count + server.price
+    user.balance(-server.price)
+    @current_money_count += server.price
+    user
   end
 
   def add_server_to_user(user, server_name)
-    @user_list.each do |i|
-      if i == user
-        @server_list.each do |j|
-          if j.name == server_name
-            i.server = server_name + ' ' + (Time.now.to_date).to_s
-            pay_for_server(user, j)
-          end
-        end
+    @user_list.each do |user_search|
+      next unless user_search == user
+      @server_list.each do |server|
+        next unless server.name == server_name
+        user_search.last_info_array[1] =
+            server_name + ' ' + (Time.now.to_date).to_s
+        pay_for_server(user, server)
       end
     end
   end
 
   def find_admin(admin_id)
+    temp_admin_id = admin_id
     @admin = nil
-    @admin_list.each do |i|
-      if i.id == admin_id
-        @admin = i
+    @admin_list.each do |admin_search|
+      if admin_search.id == temp_admin_id
+        @admin = admin_search
         return @admin
       end
     end
   end
 
   def find_user(user_id)
+    temp_user_id = user_id
     @user = nil
-    @user_list.each do |i|
-      if i.id == user_id
-        @user = i
+    @user_list.each do |user_search|
+      if user_search.default_info_array[1] == temp_user_id
+        @user = user_search
         return @user
       end
     end
   end
-
 end

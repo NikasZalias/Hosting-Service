@@ -6,9 +6,9 @@ RSpec.describe Server do
   context 'creation' do
     before(:each) do
       information_yaml = {
-          'id' => 1,
-          'name' => 'Simple',
-          'price' => 50
+        'id' => 1,
+        'name' => 'Simple',
+        'price' => 50
       }.to_yaml
       @server = Server.from_yaml(YAML.load(information_yaml))
     end

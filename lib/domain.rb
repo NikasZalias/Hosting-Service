@@ -3,7 +3,7 @@ require './lib/admin'
 require 'yaml'
 require './lib/hosting'
 
-
+# Nikodemas Zaliauskas INFO 3 kursas Hostingo paslaugu servisas
 class Domain
   attr_reader :id, :name, :price
 

@@ -6,9 +6,9 @@ RSpec.describe Domain do
   context 'creation' do
     before(:each) do
       information_yaml = {
-          'id' => 1,
-          'name' => 'www.nikas.lt',
-          'price' => 25
+        'id' => 1,
+        'name' => 'www.nikas.lt',
+        'price' => 25
       }.to_yaml
       @domain = Domain.from_yaml(YAML.load(information_yaml))
     end
