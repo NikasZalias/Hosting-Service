@@ -169,10 +169,11 @@ class Hosting
 
   def create_user_id(user_obj)
     temp = @user_list.last
+    default_info_array = user_obj.default_info_array
     if @user_list.length == 0
-      user_obj.default_info_array[1] = 0
+      default_info_array[1] = 0
     else
-      user_obj.default_info_array[1] = temp.default_info_array[1] + 1
+      default_info_array[1] = temp.default_info_array[1] + 1
     end
   end
 
@@ -199,8 +200,9 @@ class Hosting
   end
 
   def pay_for_server(user, server)
-    user.balance(-server.price)
-    @current_money_count += server.price
+    price = server.price
+    user.balance(-price)
+    @current_money_count += price
     user
   end
 
