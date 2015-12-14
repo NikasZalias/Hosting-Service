@@ -1,39 +1,41 @@
---- !ruby/object:Hosting
-user_list:
-- !ruby/object:User
-  information_array:
-  - name1
-  - surname1
-  - address111
-  - 8623244424
-  - LT6546543198754111116
-  default_info_array:
-  - nikaszalias123
-  - 0
-  - 3
-  - ''
-  blocked: false
-  more_info_array:
-  - nzaliauskas@gmail.com
-  - Company
-  - Google
-  - USA
-  - 500
-  last_info_array:
-  - 0
-  - default
-admin_list:
-- !ruby/object:Admin
-  id: 666999
-  name: name
-  password: password
-  status: 2
+--- !ruby/object:Hosting_new
 title: Title
-current_money_count: 50000
-account_number: LT6548978465654
-server_list:
-- !ruby/object:Server
-  id: 1
-  name: Simple
-  price: 50
-domain_end_list: []
+accounting:
+  :current_money_count: 50000
+  :account_number: ''
+lists:
+  :server:
+  - !ruby/object:Server
+    id: 1
+    name: Simple
+    price: 50
+  :domain_end: []
+  :admin:
+  - !ruby/object:Admin
+    id: 666999
+    name: name
+    password: password
+    status: 2
+  :user:
+  - !ruby/object:User
+    information_array:
+    - name1
+    - surname1
+    - address111
+    - 8623244424
+    - LT6546543198754111116
+    default_info_array:
+    - nikaszalias123
+    - 0
+    - ''
+    - 3
+    - false
+    more_info_array:
+    - nzaliauskas@gmail.com
+    - Company
+    - Google
+    - USA
+    - 500
+    last_info_array:
+    - 0
+    - default

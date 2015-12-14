@@ -9,7 +9,7 @@ STDOUT.sync = true
 @user = nil
 
 def start
-  @hosting = Hosting.new('Nikas', 50000, 'LT32154545787899')
+  @hosting = Hosting.new('Nikas', [50000, 'LT32154545787899'])
   # a = Server.new(1, 'Small', 10)
   # b = Server.new(2, 'Medium', 30)
   # c = Server.new(3, 'Large', 60)
@@ -62,8 +62,9 @@ def register
   p 'How much money you want to deposit: '
   current_money_count = Integer(gets)
 
-  @hosting.register(name, surname, address, number, account_number, email, person_type, company_name,
-                              country,
+  @hosting.register(name, surname, address, number,
+                    account_number, email, person_type,
+                    company_name, country,
                     current_money_count, password)
   @hosting.save_to_database
 end
@@ -98,19 +99,16 @@ def block_user
   p 'Prove that you are admin (Enter your ID): '
   admin_id = Integer(gets)
   admin = @hosting.find_admin(admin_id)
-  @hosting.admin_list.each do |i|
-    if i == admin
-      p 'Enter user\'s ID to block: '
-      user_id = Integer(gets)
-      @hosting.block_user(user_id, i)
-      @hosting.user_list.each do |i|
-        if i.id == user_id
-          if i.blocked == true
-            p 'User blocked!'
-            @hosting.save_to_database
-          end
-        end
-      end
+  @hosting.lists[:admin].each do |i|
+    next unless i == admin
+    p 'Enter user\'s ID to block: '
+    user_id = Integer(gets)
+    @hosting.block_user(user_id, i)
+    @hosting.lists[:user].each do |i|
+      next unless i.id == user_id
+      next unless i.blocked
+      p 'User blocked!'
+      @hosting.save_to_database
     end
   end
 end
@@ -119,67 +117,63 @@ def unblock_user
   p 'Prove that you are admin (Enter your ID): '
   admin_id = Integer(gets)
   admin = @hosting.find_admin(admin_id)
-  @hosting.admin_list.each do |i|
-    if i == admin
-      p 'Enter user\'s ID to unblock: '
-      user_id = Integer(gets)
-      @hosting.unblock_user(user_id)
-      @hosting.user_list.each do |i|
-        if i.id == user_id
-          if i.blocked == false
-            p 'User unblocked!'
-            @hosting.save_to_database
-          end
-        end
+  @hosting.lists[:admin].each do |i|
+    next unless i == admin
+    p 'Enter user\'s ID to unblock: '
+    user_id = Integer(gets)
+    @hosting.unblock_user(user_id)
+    @hosting.lists[:user].each do |i|
+      next unless i.id == user_id
+      if i.blocked
+        p 'User unblocked!'
+        @hosting.save_to_database
       end
     end
   end
-
 end
 
 def edit_user
   p 'Enter your ID to check if you are user you are pretending to be: '
   user_id = Integer(gets)
   user = @hosting.find_user(user_id)
-  @hosting.user_list.each do |i|
-    if i == user
-      selection = nil
-      while selection != 0
-        print("\n------------------")
-        text = "\n Main menu\n" +
-            "1. Edit address\n" +
-            "2. Edit number\n" +
-            "3. Edit account number\n" +
-            "4. Edit password\n" +
-            "0. Exit\n" +
-            "\n" +
-            "------------------\n\n" +
-            'Select an option: '
-        selection = get_selection(text, 0, 15)
-        case selection
-          when 1
-            p 'Enter your new address: '
-            new_address = String(gets)
-            @hosting.edit(i, new_address, i.number, i.account_number, i.password)
-            @hosting.save_to_database
-          when 2
-            p 'Enter your new number: '
-            new_number = Integer(gets)
-            @hosting.edit(i, i.address, new_number, i.account_number, i.password)
-            @hosting.save_to_database
-          when 3
-            p 'Enter your new account number: '
-            new_account_number = String(gets)
-            @hosting.edit(i, i.address, i.address, new_account_number, i.password)
-            @hosting.save_to_database
-          when 4
-            p 'Enter your new password: '
-            new_password = String(gets)
-            @hosting.edit(i, i.address, i.number, i.account_number, new_password)
-            @hosting.save_to_database
-          when 5
-            break
-        end
+  @hosting.lists[:user].each do |i|
+    next unless i == user
+    selection = nil
+    while selection != 0
+      print("\n------------------")
+      text = "\n Main menu\n" /
+             "1. Edit address\n" /
+             "2. Edit number\n" /
+             "3. Edit account number\n" /
+             "4. Edit password\n" /
+             "0. Exit\n" /
+             "\n" /
+             "------------------\n\n" /
+             'Select an option: '
+      selection = get_selection(text, 0, 15)
+      case selection
+      when 1
+        p 'Enter your new address: '
+        new_address = String(gets)
+        @hosting.edit(i, new_address, i.number, i.account_number, i.password)
+        @hosting.save_to_database
+      when 2
+        p 'Enter your new number: '
+        new_number = Integer(gets)
+        @hosting.edit(i, i.address, new_number, i.account_number, i.password)
+        @hosting.save_to_database
+      when 3
+        p 'Enter your new account number: '
+        new_account_number = String(gets)
+        @hosting.edit(i, i.address, i.address, new_account_number, i.password)
+        @hosting.save_to_database
+      when 4
+        p 'Enter your new password: '
+        new_password = String(gets)
+        @hosting.edit(i, i.address, i.number, i.account_number, new_password)
+        @hosting.save_to_database
+      when 5
+        break
       end
     end
   end
@@ -187,7 +181,7 @@ end
 
 def buy_server
   p '---Server list---'
-  @hosting.server_list.each do |i|
+  @hosting.lists[:server].each do |i|
     p i.name
     print(i.price)
     p '  $'
@@ -197,14 +191,13 @@ def buy_server
   p 'Enter your ID to check if you are user you are pretending to be: '
   user_id = Integer(gets)
   user = @hosting.find_user(user_id)
-  @hosting.user_list.each do |i|
-    if i == user
-      p 'Enter name of selected server plan: '
-      server_name = String(gets)
-      @hosting.add_server_to_user(i, server_name)
-      p 'You successfully bought server!'
-      @hosting.save_to_database
-    end
+  @hosting.lists[:user].each do |i|
+    next unless i == user
+    p 'Enter name of selected server plan: '
+    server_name = String(gets)
+    @hosting.add_server_to_user(i, server_name)
+    p 'You successfully bought server!'
+    @hosting.save_to_database
   end
 end
 
@@ -212,13 +205,12 @@ def buy_domain
   p 'Enter your ID to check if you are user you are pretending to be: '
   user_id = Integer(gets)
   user = @hosting.find_user(user_id)
-  @hosting.user_list.each do |i|
-    if i == user
-      p 'Enter your domain name (include "www." and ".lt"): '
-      domain_name = String(gets)
-      @hosting.add_domain(domain_name, i)
-      @hosting.save_to_database
-    end
+  @hosting.lists[:user].each do |i|
+    next unless i == user
+    p 'Enter your domain name (include "www." and ".lt"): '
+    domain_name = String(gets)
+    @hosting.add_domain(domain_name, i)
+    @hosting.save_to_database
   end
 end
 
@@ -226,45 +218,43 @@ def menu
   selection = nil
   while selection != 0
     print("\n------------------")
-    text = "\n Main menu\n" +
-        "1. Register\n" +
-        "2. Delete user\n" +
-        "3. Add admin\n" +
-        "4. Delete admin\n" +
-        "5. Block user\n" +
-        "6. Unblock user\n" +
-        "7. Edit user\n" +
-        "8. Buy server\n" +
-        "9. Buy domain\n" +
-        "0. Exit\n" +
-        "\n" +
-      "------------------\n\n" +
-        'Select an option: '
+    text = "\n Main menu\n" /
+           "1. Register\n" /
+           "2. Delete user\n" /
+           "3. Add admin\n" /
+           "4. Delete admin\n" /
+           "5. Block user\n" /
+           "6. Unblock user\n" /
+           "7. Edit user\n" /
+           "8. Buy server\n" /
+           "9. Buy domain\n" /
+           "0. Exit\n" /
+           "\n" /
+           "------------------\n\n" /
+           'Select an option: '
     selection = get_selection(text, 0, 10)
 
     case selection
-      when 1
-        register
-      when 2
-        delete_user
-      when 3
-        add_admin
-      when 4
-        delete_admin
-      when 5
-        block_user
-      when 6
-        unblock_user
-      when 7
-        edit_user
-      when 8
-        buy_server
-      when 9
-        buy_domain
-      when 0
-        return 0
-      else
-        #noop
+    when 1
+      register
+    when 2
+      delete_user
+    when 3
+      add_admin
+    when 4
+      delete_admin
+    when 5
+      block_user
+    when 6
+      unblock_user
+    when 7
+      edit_user
+    when 8
+      buy_server
+    when 9
+      buy_domain
+    when 0
+      return 0
     end
   end
 end

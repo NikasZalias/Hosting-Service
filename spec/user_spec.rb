@@ -5,24 +5,13 @@ require 'yaml'
 RSpec.describe User do
   context 'creation' do
     before(:each) do
-      information_yaml = {
-        'name' => 'Nikas',
-        'surname' => 'Zalias',
-        'address' => 'Giedros 7',
-        'number' => 863_330_227,
-        'account_number' => 'LT123456789321654987'
-      }.to_yaml
-      @user = User.from_yaml(YAML.load(information_yaml))
-      information_yaml = {
-        'password' => 'nikaszalias123',
-        'id' => 100,
-        'blocked' => 'false',
-        'email' => 'nzaliauskas@gmail.com',
-        'person_type' => 'Company',
-        'company_name' => 'Google',
-        'country' => 'USA'
-      }.to_yaml
-      @user.information_yaml(YAML.load(information_yaml))
+      @user = User.new('Nikas', 'Zalias', 'Giedros 7',
+                       863_330_227, 'LT123456789321654987')
+      @user.default_information(['nikaszalias123',
+                                 100, '', 3, false])
+      @user.information(['nzaliauskas@gmail.com',
+                         'Company', 'Google', 'USA', 500])
+      @user.more_info(0, 'default')
     end
 
     it '.initialize name' do

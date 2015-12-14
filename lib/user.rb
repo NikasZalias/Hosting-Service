@@ -8,50 +8,36 @@ class User
 
   def initialize(name, surname, address, number, account_number)
     @information_array = [name, surname, address, number, account_number]
-    set_default_information('nikaszalias123', 0, false, 3, '')
-    set_information('nzaliauskas@gmail.com', 'Company', 'Google', 'USA', 500)
-    set_more_info(0, 'default')
+    default_information(['nikaszalias123', 0, '', 3, false])
+    information(['nzaliauskas@gmail.com', 'Company', 'Google', 'USA', 500])
+    more_info(0, 'default')
   end
 
-  public def set_default_information(password, id, blocked,
-                                     status, domains_name)
-    @default_info_array = [password, id, status, domains_name]
-    @blocked = blocked
+  public def default_information(info_array)
+    @default_info_array = info_array
   end
 
-  public def set_information(email, person_type, company_name,
-                             country, current_money_count)
-    @more_info_array = [email, person_type, company_name,
-                        country, current_money_count]
+  public def information(set_new_info)
+    @more_info_array = set_new_info
   end
 
-  public def set_more_info(domain_count, server)
+  public def more_info(domain_count, server)
     @last_info_array = [domain_count, server]
   end
 
-  def self.from_yaml(obj)
-    User.new(obj['name'], obj['surname'], obj['address'],
-             obj['number'], obj['account_number'])
-  end
-
-  def information_yaml(obj)
-    set_default_information(obj['password'], obj['id'], obj['blocked'],
-                            obj['status'], obj['domain_name'])
-    set_information(obj['email'], obj['person_type'],
-                    obj['company_name'], obj['country'],
-                    obj['current_money_count'])
-    set_more_info(obj['domain_count'], obj['server'])
-  end
-
   def block
-    @blocked ? @blocked = false : @blocked = true
+    if @default_info_array[4]
+      @default_info_array[4] = false
+    else
+      @default_info_array[4] = true
+    end
   end
 
-  def edit(address, number, account_number, password)
-    @information_array[2] = address
-    @information_array[3] = number
-    @information_array[4] = account_number
-    @default_info_array[0] = password
+  def edit(new_info)
+    @information_array[2] = new_info[0]
+    @information_array[3] = new_info[1]
+    @information_array[4] = new_info[2]
+    @default_info_array[0] = new_info[3]
   end
 
   def email
